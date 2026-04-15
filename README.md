@@ -38,7 +38,7 @@ Haz clic en el nombre de la asignatura para acceder a su carpeta de ejercicios.
 </details>
 
 <details open>
-  <summary><b>📂 Segundo Año (En Desarrollo)</b> | ⬜⬜⬜⬜⬜⬜⬜</summary>
+  <summary><b>📂 Segundo Año (En Desarrollo)</b> | 🟩⬜⬜⬜⬜⬜⬜</summary>
 
 - [ ] [**Acceso a datos**](./02-segundo-anio/acceso-a-datos)
 - [ ] [**Desarrollo de interfaces**](./02-segundo-anio/desarrollo-interfaces)
@@ -47,7 +47,7 @@ Haz clic en el nombre de la asignatura para acceder a su carpeta de ejercicios.
 - [ ] [**Ciberseguridad**](./02-segundo-anio/ciberseguridad)
 - [ ] [**Sistemas de gestión empresarial**](./02-segundo-anio/gestion-empresarial)
 - [ ] [**Digitalización y Sostenibilidad**](./02-segundo-anio/sostenibilidad)
-- [ ] [**Itinerario personal (Empleabilidad)**](./02-segundo-anio/itinerario-empleabilidad)
+- [x] [**Itinerario personal (Empleabilidad)**](./02-segundo-anio/itinerario-empleabilidad)
 </details>
 
 ---

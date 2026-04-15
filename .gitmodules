@@ -1,0 +1,3 @@
+[submodule "02-segundo-anio/desarrollo-interfaces/proyectos/movie-catalog"]
+	path = 02-segundo-anio/desarrollo-interfaces/proyectos/movie-catalog
+	url = https://github.com/davidValades/movie-catalog.git
