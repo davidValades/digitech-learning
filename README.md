@@ -57,27 +57,46 @@ Haz clic en el nombre de la asignatura para acceder a su carpeta de ejercicios.
 ```text
 digitech-learning/
 ├── 01-primer-anio/
-│ ├── bases-de-datos/
-│ ├── entornos-de-desarrollo/
-│ ├── ingles-tecnico/
-│ ├── lenguaje-de-marcas/
-│ ├── posicionamiento-seo/
-│ ├── programacion-java/
-│ └── sistemas-informaticos/
+│   ├── bases-de-datos/
+│   ├── entornos-de-desarrollo/
+│   ├── ingles-tecnico/
+│   ├── lenguaje-de-marcas/
+│   ├── posicionamiento-seo/
+│   ├── programacion-java/
+│   └── sistemas-informaticos/
 ├── 02-segundo-anio/
-│ ├── acceso-a-datos/
-│ │ ├── ejercicios/
-│ │ ├── proyectos/
-│ │ └── recursos/
-│ ├── ciberseguridad/
-│ │ ├── ejercicios/
-│ │ ├── ...
-│ ├── desarrollo-interfaces/
-│ ├── gestion-empresarial/
-│ ├── itinerario-empleabilidad/
-│ ├── multimedia-android/
-│ ├── servicios-procesos/
-│ └── sostenibilidad/
+│   ├── acceso-a-datos/
+│   │   ├── ejercicios/
+│   │   ├── proyectos/
+│   │   └── recursos/
+│   ├── ciberseguridad/
+│   │   ├── ejercicios/
+│   │   ├── proyectos/
+│   │   └── recursos/
+│   ├── desarrollo-interfaces/
+│   │   ├── ejercicios/
+│   │   ├── proyectos/
+│   │   └── recursos/
+│   ├── gestion-empresarial/
+│   │   ├── ejercicios/
+│   │   ├── proyectos/
+│   │   └── recursos/
+│   ├── itinerario-empleabilidad/
+│   │   ├── ejercicios/
+│   │   ├── proyectos/
+│   │   └── recursos/
+│   ├── multimedia-android/
+│   │   ├── ejercicios/
+│   │   ├── proyectos/
+│   │   └── recursos/
+│   ├── servicios-procesos/
+│   │   ├── ejercicios/
+│   │   ├── proyectos/
+│   │   └── recursos/
+│   └── sostenibilidad/
+│       ├── ejercicios/
+│       ├── proyectos/
+│       └── recursos/
 └── README.md
 ```
 
