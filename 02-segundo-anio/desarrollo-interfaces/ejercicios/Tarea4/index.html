@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario de Notas -Tarea 4</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-notebook-pen-icon lucide-notebook-pen"
+            >
+              <path
+                d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"
+              />
+              <path d="M2 6h4" />
+              <path d="M2 10h4" />
+              <path d="M2 14h4" />
+              <path d="M2 18h4" />
+              <path
+                d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"
+              />
+            </svg>
+            Inicio</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <main>
+      <!-- Formulario de notas-->
+      <form class="formulario">
+        <h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-notebook-pen-icon lucide-notebook-pen"
+          >
+            <path
+              d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"
+            />
+            <path d="M2 6h4" />
+            <path d="M2 10h4" />
+            <path d="M2 14h4" />
+            <path d="M2 18h4" />
+            <path
+              d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"
+            />
+          </svg>
+          Formulario de Notas
+        </h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required />
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required />
+
+        <label for="materia1">Materia 1:</label>
+        <input type="text" id="materia1" name="materia1" required />
+
+        <label for="nota1">Nota 1:</label>
+        <input
+          type="number"
+          id="nota1"
+          name="nota1"
+          placeholder="Ingrese la nota 1"
+          min="0"
+          max="10"
+          required
+        />
+
+        <label for="materia2">Materia 2:</label>
+        <input type="text" id="materia2" name="materia2" required />
+
+        <label for="nota2">Nota 2:</label>
+        <input
+          type="number"
+          id="nota2"
+          name="nota2"
+          placeholder="Ingrese la nota 2"
+          step="0.25"
+          min="0"
+          max="10"
+          required
+        />
+
+        <label for="materia3">Materia 3:</label>
+        <input type="text" id="materia3" name="materia3" required />
+
+        <label for="nota3">Nota 3:</label>
+        <input
+          type="number"
+          id="nota3"
+          name="nota3"
+          placeholder="Ingrese la nota 3"
+          step="0.25"
+          min="0"
+          max="10"
+          required
+        />
+        <button type="submit">Enviar</button>
+
+        <div id="caja-resultado" class="oculto"></div>
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2026 Digitech Learning. Desarrollo de interfaces.</p>
+    </footer>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
