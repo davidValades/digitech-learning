@@ -102,4 +102,15 @@ digitech-learning/
 
 ---
 
+## 💼 Proyectos Destacados
+
+Aquí puedes ver la aplicación real de lo aprendido en las diferentes asignaturas del ciclo:
+
+| Proyecto                                                                             | Asignaturas Aplicadas    | Tecnologías                                                                                                                                                                                                  | Enlace al Código                                                                |
+| :----------------------------------------------------------------------------------- | :----------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------ |
+| **[Landing Rodihab](./01-primer-anio/lenguaje-de-marcas/proyectos/landing-rodihab)** | Lenguaje de Marcas, SEO  | ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white) | [Ver Proyecto](./01-primer-anio/lenguaje-de-marcas/proyectos/landing-rodihab)   |
+| **[Movie Catalog](./02-segundo-anio/desarrollo-interfaces/proyectos/movie-catalog)** | Desarrollo de Interfaces | ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white) | [Ver Proyecto](./02-segundo-anio/desarrollo-interfaces/proyectos/movie-catalog) |
+
+---
+
 _⭐ Proyecto de aprendizaje documentado por [David Valadés Navarro](https://github.com/davidValades)._
