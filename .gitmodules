@@ -1,3 +1,6 @@
 [submodule "02-segundo-anio/desarrollo-interfaces/proyectos/movie-catalog"]
 	path = 02-segundo-anio/desarrollo-interfaces/proyectos/movie-catalog
 	url = https://github.com/davidValades/movie-catalog.git
+[submodule "01-primer-anio/lenguaje-de-marcas/proyectos/landing-rodihab"]
+	path = 01-primer-anio/lenguaje-de-marcas/proyectos/landing-rodihab
+	url = https://github.com/davidValades/Landing-rodihab.git
