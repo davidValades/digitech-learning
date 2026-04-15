@@ -38,17 +38,21 @@ Para avanzar al siguiente nivel, se aplican las siguientes reglas:
 ## 🛠️ Tecnologías Utilizadas
 
 - **HTML5**: Estructura del formulario semántico e intuitivo.
-- **JavaScript (Vanilla)**: Lógica de cálculo, validaciones de tipos de datos y gestión de alertas interactivas.
-- **CSS3**: Diseño orientado a la temática educativa (imágenes y UX).
+- **JavaScript (Vanilla)**: Lógica de cálculo, manipulación del DOM para inyectar resultados y validación de datos.
+- **CSS3**: Diseño limpio orientado a la temática educativa y animaciones para la visualización del resultado.
 
 ---
 
 ## 📂 Estructura de la Tarea
 
 ```text
-tarea-04/
-├── index.html       # Interfaz de usuario
-├── script.js        # Motor de lógica y cálculos
-├── style.css        # Estilos y diseño visual
-└── assets/          # Imágenes relacionadas
+Tarea4/
+├── index.html       # Estructura de la interfaz de usuario
+├── README.md        # Documentación del ejercicio
+├── css/
+│   └── styles.css   # Variables CSS, diseño visual y animaciones
+└── js/
+    └── main.js      # Motor de lógica, cálculos y manipulación del DOM
 ```
+
+⭐ Ejercicio realizado para el módulo de Desarrollo de Interfaces - [David Valadés Navarro](https://github.com/davidValades)
