@@ -69,9 +69,9 @@
           Formulario de Notas
         </h2>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required />
+        <input type="text" placeholder="Ingrese su nombre" nombre" name="nombre" required />
         <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" required />
+        <input type="text" id="apellido" placeholder="ingrese su apellido" name="apellido" required />
 
         <label for="materia1">Materia 1:</label>
         <input type="text" id="materia1" name="materia1" required />
@@ -117,7 +117,7 @@
           required
         />
         <button type="submit">Enviar</button>
-
+        <button type="limpiar" id="limpiar" style="display: none;">limpiar</button>
         <div id="caja-resultado" class="oculto"></div>
       </form>
     </main>

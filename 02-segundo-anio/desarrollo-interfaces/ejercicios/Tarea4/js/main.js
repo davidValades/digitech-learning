@@ -3,6 +3,7 @@
 // Buscamos la clase "formulario" en el documento HTML y la asignamos a la variable "formulario"
 const formulario = document.querySelector(".formulario");
 const cajaResultado = document.getElementById("caja-resultado");
+const limpiar = document.getElementById("limpiar");
 
 // Escuchar el evento "submit" del formulario
 formulario.addEventListener("submit", function (event) {
@@ -70,7 +71,18 @@ formulario.addEventListener("submit", function (event) {
     mensaje += "\n❌ El alumno debe repetir el curso.";
   }
 
+  // limpiar 
+  limpiar.addEventListener("click",() => {
+    formulario.reset(); //limpiar inputs
+    cajaResultado.textContent = "";
+    cajaResultado.className = "hidden";
+    limpiar.style.display = "none";
+  });
+  
+
   // Mostrar el mensaje con los resultados
   cajaResultado.textContent = mensaje;
   cajaResultado.className = "visible";
+  limpiar.style.display = "block";
+
 });
