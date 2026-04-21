@@ -10,7 +10,7 @@ Este repositorio contiene una serie de retos prácticos enfocados en la modifica
 
 ## 🧠 Retos y Soluciones Aplicadas
 
-El proyecto se divide en 5 bloques lógicos donde se han transformado programas base para cumplir con requisitos específicos de negocio y técnicos:
+El proyecto se divide en 4 bloques lógicos donde se han transformado programas base para cumplir con requisitos específicos:
 
 ### 1. Modificación Algorítmica (Múltiplos)
 * **Múltiplos de 3:** Reestructuración del bucle de control para identificar y filtrar secuencias basadas en la divisibilidad por 3.
@@ -21,22 +21,22 @@ El proyecto se divide en 5 bloques lógicos donde se han transformado programas 
 * **Formato 12h/24h:** Implementación de condicionales para la conversión de horas y sufijos AM/PM según la elección del usuario.
 * **Dark Mode Automático:** Inyección dinámica de estilos CSS para cambiar el fondo a *Azul Noche* basándose en el rango horario detectado.
 
-### 3. Gestión de Datos (Día del Idioma 📚)
-* **Extensión de Tareas:** Evolución de un gestor de tareas simple a una biblioteca de libros y autores.
-* **Inmortalización Cultural:** Integración de recursos visuales y metadatos en honor al 23 de abril (Día del Idioma).
+### 3. To-Do List App ✅
+* **Gestión Dinámica de Tareas:** Desarrollo de una aplicación de gestión con interfaz intuitiva y moderna, alejándose de estructuras estáticas para priorizar la interacción del usuario.
+* **Manipulación del DOM:** Implementación de funciones core para **agregar, archivar y eliminar** tareas, gestionando la creación y destrucción de nodos HTML de forma eficiente.
 
 ### 4. 🚀 Optimización y Control de Hardware (Punto Bonus)
 * **Gestión de Potencia:** Se ha implementado un "Safe Guard" que limita el procesamiento de números primos basándose en el desbordamiento de memoria/tiempo de ejecución observado.
 * **UX Preventiva:** Uso de `alert()` informativos para educar al usuario sobre las limitaciones de hardware antes de que el navegador se bloquee.
-* **Criba de Eratóstenes:** Inclusión de una sección informativa sobre la importancia de este algoritmo en la **Criptografía Moderna** y la seguridad informática.
+* **Criba de Eratóstenes:** Inclusión de una sección informativa sobre la importancia de este algoritmo en la **Criptografía Moderna**.
 
 ---
 
 ## 🛠️ Tecnologías Utilizadas
 
-- **Lógica de Programación:** JavaScript (ES6+)
-- **Estructura:** HTML5 Semántico
-- **Estilos:** CSS3 Dinámico
+- **Lógica de Programación:** JavaScript (ES6+) - Event Listeners y Callbacks.
+- **Estructura:** HTML5 Semántico.
+- **Estilos:** CSS3 Dinámico y Flexbox para la interface del To-Do.
 - **Conceptos de Computación:** Algoritmos de Cribado y Eficiencia de Ciclos.
 
 ---
@@ -49,6 +49,6 @@ digitech-ejercicios/
 ├── js/
 │   ├── multiplos.js        # Lógica de múltiplos de 3 y 11
 │   ├── reloj.js            # Gestión de hora y estilos de noche
-│   ├── biblioteca.js       # Lista de libros y autores
-│   └── primos_expert.js    # Criba de Eratóstenes y control de potencia
-└── assets/                 # Imágenes conmemorativas y recursos visuales
+│   ├── to-do.js            # Lógica de la App de tareas (CRUD del DOM)
+│   └── primos.js           # Criba de Eratóstenes y control de potencia
+└── assets/                 # Recursos gráficos y estilos globales
