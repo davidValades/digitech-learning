@@ -60,51 +60,6 @@ nav ul li a:hover {
   color: var(--primary-color);
 }
 
-form {
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: white;
-  border-radius: var(--border-radius);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  transition: var(--transition);
-}
-
-form label {
-  display: block;
-  margin-bottom: 10px;
-  margin: 10px 0;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="password"],
-form input[type="submit"],
-form input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
-}
-
-form button {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: var(--secondary-color);
-  color: white;
-  border: none;
-  border-radius: var(--border-radius);
-  cursor: pointer;
-  transition: var(--transition);
-}
-form button:hover {
-  background-color: rgb(7, 218, 60);
-  box-shadow: rgb(7, 218, 60) 0px 2px 4px;
-  cursor: pointer;
-}
-
 footer {
   background-color: var(--primary-color);
   color: white;
@@ -115,36 +70,14 @@ footer {
   width: 100%;
 }
 
-/* Estilos para la caja de resultados */
-#caja-resultado {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 15px;
-  border-radius: var(--border-radius);
-  background-color: #eef2f5;
-  border-left: 5px solid var(--primary-color);
-  font-family: monospace;
-  white-space: pre-line;
-  line-height: 1.6;
+/* Dashboard */
+.dashboard {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
 }
 
-/* Clases para mostrar/ocultar */
-.oculto {
-  display: none;
-}
-
-.visible {
-  display: block;
-  animation: aparecer 0.5s ease-in;
-}
-
-@keyframes aparecer {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.dashboard-header {
+  text-align: center;
 }
