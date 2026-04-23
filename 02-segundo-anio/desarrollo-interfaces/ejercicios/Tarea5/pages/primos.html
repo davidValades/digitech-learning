@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Tarea 5</title>
+    <title>Primos y Seguridad - Tarea 5</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/primos/style.css" />
   </head>
   <body>
     <nav>
@@ -56,10 +57,51 @@
         </ul>
       </div>
     </nav>
+<main class="page-primos">
+      <div class="container">
+        <h1>Laboratorio de Números Primos</h1>
+        
+        <div class="info-card">
+          <h3>🛡️ La Criba de Eratóstenes y la Criptografía</h3>
+          <p>
+            La <strong>Criba de Eratóstenes</strong> es un algoritmo antiguo y ultrarrápido que descarta múltiplos en lugar de dividir cada número. 
+            Calcular primos rápidos es vital en la informática moderna: los sistemas de seguridad como el <strong>RSA</strong> (usado en bancos y HTTPS) basan su encriptación en multiplicar dos números primos gigantes. ¡Si romper esa multiplicación fuera fácil, no habría seguridad en internet!
+          </p>
+        </div>
+
+        <label for="numero">Límite de cálculo (N):</label>
+        <input type="number" id="numero" min="2" placeholder="Ej: 100000">
+
+        <div class="botones-grid">
+          <button class="btn-primary" onclick="compararAlgoritmos()">Comenzar Test</button>
+          <button class="btn-secondary" onclick="limpiarResultado()">Limpiar</button>
+        </div>
+        
+        <div class="metricas">
+          <div class="metrica-box">
+            <h4>Fuerza Bruta</h4>
+            <p id="tiempoFuerza">0.00 ms</p>
+          </div>
+          <div class="metrica-box">
+            <h4>Criba de Eratóstenes</h4>
+            <p id="tiempoCriba">0.00 ms</p>
+          </div>
+        </div>
+
+        <h3>Total Encontrados: <span id="totalPrimos">0</span></h3>
+        
+        <div id="seccionResultados" class="resultados-lista" style="display: none;">
+          <h3>Detalle de Números:</h3>
+          <div id="listaPrimos" class="caja-scroll"></div>
+        </div>
+        
+      </div> 
+    </main>
 
     <footer>
       <p>&copy; 2026 Digitech Learning. Desarrollo de interfaces.</p>
     </footer>
     <script src="../js/main.js"></script>
+    <script src="../js/primos.js"></script>
   </body>
 </html>

@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Tarea 5</title>
+    <title>Primos y Seguridad - Tarea 5</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/multiplos/style.css" />
   </head>
   <body>
     <nav>
@@ -56,10 +57,50 @@
         </ul>
       </div>
     </nav>
+    <main class="page-primos">
+      <div class="container">
+        <h1>Generador de Múltiplos (3)</h1>
+        
+        <div class="info-card">
+          <h3>🔄 Eficiencia en Bucles (Loops)</h3>
+          <p>
+            Existen dos formas de sacar los múltiplos de 3: <strong>Fuerza Bruta</strong> (recorrer TODOS los números de 1 en 1 y comprobar si el resto de la división es 0 usando <code>i % 3 === 0</code>) y mediante <strong>Saltos</strong> (empezar en 3 y sumar 3 en cada iteración). ¿Cuál será más rápido? ¡El de saltos hace un tercio del trabajo!
+          </p>
+        </div>
+
+        <label for="numero">Límite de cálculo (N):</label>
+        <input type="number" id="numero" min="3" placeholder="Ej: 1000000">
+
+        <div class="botones-grid">
+          <button class="btn-primary" onclick="compararMultiplos()">Generar</button>
+          <button class="btn-secondary" onclick="limpiarResultado()">Limpiar</button>
+        </div>
+        
+        <div class="metricas">
+          <div class="metrica-box">
+            <h4>Bucle con Resto (%)</h4>
+            <p id="tiempoResto">0.00 ms</p>
+          </div>
+          <div class="metrica-box">
+            <h4>Bucle con Saltos (+3)</h4>
+            <p id="tiempoSaltos">0.00 ms</p>
+          </div>
+        </div>
+
+        <h3>Total Encontrados: <span id="totalMultiplos">0</span></h3>
+        
+        <div id="seccionResultados" class="resultados-lista" style="display: none;">
+          <h3>Detalle de Múltiplos:</h3>
+          <div id="listaMultiplos" class="caja-scroll"></div>
+        </div>
+        
+      </div>
+    </main>
 
     <footer>
       <p>&copy; 2026 Digitech Learning. Desarrollo de interfaces.</p>
     </footer>
     <script src="../js/main.js"></script>
+    <script src="../js/multiplos.js"></script>
   </body>
 </html>
