@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reloj - Tarea 5</title>
-    <link rel="stylesheet" href="../css/reloj/style_1.css" />
+    <title>Primos y Seguridad - Tarea 5</title>
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/multiplos/style.css" />
   </head>
   <body>
     <nav>
@@ -58,26 +58,43 @@
         </ul>
       </div>
     </nav>
-    <main>
-      <div class="container text-center">
-        <h1 id="saludo">Cargando reloj...</h1>
-        <div id="relojDisplay" class="reloj-digital">--:--:--</div>
-        <div class="botones-reloj">
-          <button id="btnZona" class="btn-primary">Cambiar a Península</button>
-        <button id="btnConfig" class="btn-primary">
-          ⚙️ Configurar Formato de hora
-        </button>
-      </div>
+    <main class="page-primos">
+      <div class="container">
+        <h1>Generador de Múltiplos (11)</h1>
+        
+        <div class="info-card">
+          <h3>🔄 Eficiencia Extrema en Bucles</h3>
+          <p>
+            Al igual que con el 3, existen dos formas de sacar los múltiplos de 11: <strong>Fuerza Bruta</strong> (comprobar el resto usando <code>i % 11 === 0</code>) y mediante <strong>Saltos</strong> (empezar en 11 y sumar 11). ¡El bucle de saltos hace un 91% menos de iteraciones que el de fuerza bruta!
+          </p>
+        </div>
 
-      <div id="customModal" class="modal-overlay">
-        <div class="modal-box">
-          <h2>Formato de Hora</h2>
-          <p>¿Cómo prefieres ver el reloj?</p>
-          <div class="modal-buttons">
-            <button id="btn12h" class="btn-primary">Formato 12h (AM/PM)</button>
-            <button id="btn24h" class="btn-primary">Formato 24h</button>
+        <label for="numero">Límite de cálculo (N):</label>
+        <input type="number" id="numero" min="11" placeholder="Ej: 1000000">
+
+        <div class="botones-grid">
+          <button class="btn-primary" onclick="compararMultiplos11()">Generar</button>
+          <button class="btn-secondary" onclick="limpiarResultado()">Limpiar</button>
+        </div>
+        
+        <div class="metricas">
+          <div class="metrica-box">
+            <h4>Bucle con Resto (%)</h4>
+            <p id="tiempoResto">0.00 ms</p>
+          </div>
+          <div class="metrica-box">
+            <h4>Bucle con Saltos (+11)</h4>
+            <p id="tiempoSaltos">0.00 ms</p>
           </div>
         </div>
+
+        <h3>Total Encontrados: <span id="totalMultiplos">0</span></h3>
+        
+        <div id="seccionResultados" class="resultados-lista" style="display: none;">
+          <h3>Detalle de Múltiplos:</h3>
+          <div id="listaMultiplos" class="caja-scroll"></div>
+        </div>
+        
       </div>
     </main>
 
@@ -85,6 +102,5 @@
       <p>&copy; 2026 Digitech Learning. Desarrollo de interfaces.</p>
     </footer>
     <script src="../js/main.js"></script>
-    <script src="../js/reloj.js" defer></script>
-  </body>
+    <script src="../js/multiplos11.js"></script> </body>
 </html>
