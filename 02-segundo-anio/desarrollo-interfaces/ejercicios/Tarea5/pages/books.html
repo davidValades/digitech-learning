@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard - Tarea 5</title>
+    <title>Books List - Tarea 5</title>
+    <link rel="stylesheet" href="../css/books/style.css" />
     <link rel="stylesheet" href="../css/styles.css" />
   </head>
   <body>
@@ -56,10 +57,42 @@
         </ul>
       </div>
     </nav>
-
+    <main class="books-page">
+      <div id="taskContainer">
+        <h1>📚 Book List</h1>
+        <div class="inputContainer">
+          <input
+            type="text"
+            id="newTaskInput"
+            placeholder="Inserta un nuevo libro"
+          />
+          <button id="addTaskBtn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-plus-icon lucide-plus"
+            >
+              <path d="M5 12h14" />
+              <path d="M12 5v14" />
+            </svg>
+          </button>
+        </div>
+        <ul id="taskList">
+          <!-- Aquí se agregarán las tareas -->
+        </ul>
+      </div>
+    </main>
     <footer>
       <p>&copy; 2026 Digitech Learning. Desarrollo de interfaces.</p>
     </footer>
     <script src="../js/main.js"></script>
+    <script src="../js/books.js"></script>
   </body>
 </html>

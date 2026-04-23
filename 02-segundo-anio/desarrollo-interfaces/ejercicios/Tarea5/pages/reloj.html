@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reloj - Tarea 5</title>
+    <link rel="stylesheet" href="../css/reloj/style_1.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+            <path
+              d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+            />
+          </svg>
+          Inicio
+        </a>
+
+        <button id="menu-toggle" class="hamburger-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          Menú
+        </button>
+
+        <ul id="nav-list" class="nav-list">
+          <li><a href="../pages/multiplos.html">Múltiplos</a></li>
+          <li><a href="../pages/reloj.html">Reloj</a></li>
+          <li><a href="../pages/books.html">Books</a></li>
+          <li><a href="../pages/primos.html">Números Primos</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div class="container text-center">
+        <h1 id="saludo">Cargando reloj...</h1>
+        <div id="relojDisplay" class="reloj-digital">--:--:--</div>
+        <div class="botones-reloj">
+          <button id="btnZona" class="btn-secondary">Cambiar a Península</button>
+        <button id="btnConfig" class="btn-primary">
+          ⚙️ Configurar Formato de hora
+        </button>
+      </div>
+
+      <div id="customModal" class="modal-overlay">
+        <div class="modal-box">
+          <h2>Formato de Hora</h2>
+          <p>¿Cómo prefieres ver el reloj?</p>
+          <div class="modal-buttons">
+            <button id="btn12h" class="btn-primary">Formato 12h (AM/PM)</button>
+            <button id="btn24h" class="btn-secondary">Formato 24h</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Digitech Learning. Desarrollo de interfaces.</p>
+    </footer>
+    <script src="../js/main.js"></script>
+    <script src="../js/reloj.js" defer></script>
+  </body>
+</html>
