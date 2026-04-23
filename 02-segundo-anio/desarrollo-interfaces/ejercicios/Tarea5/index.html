@@ -3,70 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario de Notas -Tarea 4</title>
+    <title>Dashboard - Tarea 5</title>
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
     <nav>
-      <ul>
-        <li>
-          <a href="#">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-house-icon lucide-house"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
-              <path
-                d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4"
-              />
-              <path d="M2 6h4" />
-              <path d="M2 10h4" />
-              <path d="M2 14h4" />
-              <path d="M2 18h4" />
-              <path
-                d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z"
-              />
-            </svg>
-            Inicio</a>
-        </li>
-        <li><a href= >Multiplos</a></li>
-        <li><a href= >Reloj</li>
-        <li><a href= >To-Do</a></li>
-        <li><a href= >numeros primos</a></li>
-      </ul>
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+            <path
+              d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
+            />
+          </svg>
+          Inicio
+        </a>
+
+        <button id="menu-toggle" class="hamburger-btn">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="4" x2="20" y1="12" y2="12" />
+            <line x1="4" x2="20" y1="6" y2="6" />
+            <line x1="4" x2="20" y1="18" y2="18" />
+          </svg>
+          Menú
+        </button>
+
+        <ul id="nav-list" class="nav-list">
+          <li><a href="./pages/multiplos.html">Múltiplos</a></li>
+          <li><a href="./pages/reloj.html">Reloj</a></li>
+          <li><a href="./pages/todo.html">To-Do</a></li>
+          <li><a href="./pages/primos.html">Números Primos</a></li>
+        </ul>
+      </div>
     </nav>
-      <main class="dashboard">
-        <header class="dashboard-header">
-          <h1>Dashboard</h1>
-        </header>
-        <!-- Sección de tarjetas -->
-        <section class="cards-grid">
-          <!-- Tarjeta 1 -->
-          <article class="card">
-            <div class="card-icon"></div>
-            <h2>Multiplos</h2>
-            <p>Modificacion algoritmica de blucles para filtrar secuencias matemtaticas</p>
-            <a href="./pages/multiplos.html"></a>
-          </article>
-          <!-- Tarjeta 2 -->
-          <article class="card">
-            <div class="card-icon"></div>
-            <h2>Reloj & Dark mode</h2>
-            <p>Gestion del objeto Date, huso horario de canarias y manipulacion de estilos UI dinámicos 2.</p>
-            <a href="./pages/reloj.html"></a>
-          </article>
-          <!-- Tarjeta 3 -->
-          <article class="card">
-            <div class="card-icon"></div>
-            <h2>To-Do List</h2>
-            <p>Aplicacion de gestion de tareas. Creacion, lectura, actualizacion y eliminacion.</p>
-            <a href="./pages/todo.html"></a>
-          </article>
-          <!-- Tarjeta 4 -->
-          <article class="card">
-            <div class="card-icon"></div>
-            <h2>Primos y Seguridad</h2>
-            <p>Limites de hardware, prevencion de vuellos de botella, comparacion de algoritmos</p>
-            <a href="./pages/primos.html"></a>
-          </article>
-        </section>
-      </main>
+    <main class="dashboard">
+      <header class="dashboard-header">
+        <h1>Dashboard</h1>
+      </header>
+      <!-- Sección de tarjetas -->
+      <section class="cards-grid">
+        <!-- Tarjeta 1 -->
+        <article class="card">
+          <div class="card-icon">🔢</div>
+          <h2>Multiplos</h2>
+          <p>
+            Modificacion algoritmica de blucles para filtrar secuencias
+            matemtaticas
+          </p>
+          <a href="./pages/multiplos.html" class="btn-primary">Ver Ejercicio</a>
+        </article>
+        <!-- Tarjeta 2 -->
+        <article class="card">
+          <div class="card-icon">⏱️</div>
+          <h2>Reloj & Dark mode</h2>
+          <p>
+            Gestion del objeto Date, huso horario de canarias y manipulacion de
+            estilos UI dinámicos 2.
+          </p>
+          <a href="./pages/reloj.html" class="btn-primary">Ver Ejercicio</a>
+        </article>
+        <!-- Tarjeta 3 -->
+        <article class="card">
+          <div class="card-icon">✅</div>
+          <h2>To-Do List</h2>
+          <p>
+            Aplicacion de gestion de tareas. Creacion, lectura, actualizacion y
+            eliminacion.
+          </p>
+          <a href="./pages/todo.html" class="btn-primary">Ver Ejercicio</a>
+        </article>
+        <!-- Tarjeta 4 -->
+        <article class="card">
+          <div class="card-icon">🛡️</div>
+          <h2>Primos y Seguridad</h2>
+          <p>
+            Limites de hardware, prevencion de cuellos de botella, comparación
+            de algoritmos
+          </p>
+          <a href="./pages/primos.html" class="btn-primary">Ver Ejercicio</a>
+        </article>
+      </section>
+    </main>
     <footer>
       <p>&copy; 2026 Digitech Learning. Desarrollo de interfaces.</p>
     </footer>

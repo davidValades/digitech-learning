@@ -8,15 +8,20 @@
   --primary-color: #6baedb;
   --secondary-color: #1d4dee;
   --text-color: #333;
+  --text-muted: #666;
   --background-color: #f4f4f4;
   --border-radius: 5px;
   --font-family: Arial, sans-serif;
   --font-size: 16px;
   --line-height: 1.5;
   --transition: all 0.3s ease-in-out;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --card-bg: #ffffff;
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   font-family: var(--font-family);
@@ -24,6 +29,7 @@ body {
   line-height: var(--line-height);
   background-color: var(--background-color);
   color: var(--text-color);
+  min-height: 100vh;
 }
 
 header {
@@ -32,42 +38,99 @@ header {
   padding: 20px;
   text-align: center;
 }
+
+/* Nav */
+
 nav {
   background-color: var(--secondary-color);
-  padding: 10px;
+  padding: 10px 20px;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
+.nav-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav ul li {
-  margin: 0 10px;
-  --transition: var(--transition);
-  transition: var(--transition);
-}
-
-nav ul li a {
-  text-decoration: none;
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
   transition: var(--transition);
 }
 
-nav ul li a:hover {
+.nav-logo:hover {
   color: var(--primary-color);
 }
 
-footer {
-  background-color: var(--primary-color);
+.hamburger-btn {
+  background: none;
+  border: none;
   color: white;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-family: var(--font-family);
+  font-weight: bold;
+  cursor: pointer;
   padding: 0.5rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  transition: var(--transition);
+}
+
+.hamburger-btn:hover {
+  color: var(--primary-color);
+}
+
+.nav-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0px;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  box-shadow: var(--shadow);
+  list-style: none;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 200px;
+  z-index: 100;
+  margin-top: 10px;
+}
+
+.nav-list.open {
+  display: flex;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-list li:last-child a {
+  border-bottom: none;
+}
+
+.nav-list li a:hover {
+  color: var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.1);
+  padding-left: 10px;
+  border-radius: var(--border-radius);
 }
 
 /* Dashboard */
@@ -80,4 +143,91 @@ footer {
 
 .dashboard-header {
   text-align: center;
+  margin-bottom: 3rem;
+  background: var(--secondary-color);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.dashboard-header p {
+  color: var(--text-muted);
+}
+
+/* Grid cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 2rem;
+}
+
+/* cards */
+.card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top: 5px solid var(--primary-color);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+  border-top-color: var(--secondary-color);
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.card h2 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Botón */
+.btn-primary {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.02);
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  bottom: 0;
+  margin-top: auto;
+  width: 100%;
 }
