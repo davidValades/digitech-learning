@@ -46,7 +46,7 @@ El proyecto se divide en 4 bloques funcionales donde se ha priorizado el rendimi
 ## 📂 Arquitectura del Proyecto
 
 ```text
-digitech-ejercicios/
+Tarea5/
 ├── index.html                  # Dashboard principal
 ├── pages/                      # Vistas funcionales
 │   ├── reloj.html
@@ -67,3 +67,5 @@ digitech-ejercicios/
     ├── multiplos11.js          # Algoritmos iterativos base 11
     └── books.js                # Lógica CRUD de nodos HTML
 ```
+
+_⭐ Proyecto de aprendizaje documentado por [David Valadés Navarro](https://github.com/davidValades)._
