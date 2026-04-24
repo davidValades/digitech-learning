@@ -69,8 +69,8 @@ digitech-learning/
 ├── 01-primer-anio/          # Fundamentos de Ingeniería de Software
 ├── 02-segundo-anio/         # Especialización y Proyectos Avanzados
 └── README.md
+```
 
 ---
 
 _⭐ Proyecto de aprendizaje documentado por [David Valadés Navarro](https://github.com/davidValades)._
-```
