@@ -1,6 +1,6 @@
 # 🧮 Calculadora con Spinner | Android Studio
 
-![Status](https://img.shields.io/badge/Estado-En_Progreso_🚀-2ea44f?style=for-the-badge)
+![Status](https://img.shields.io/badge/Estado-Completado-2ea44f?style=for-the-badge)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 
