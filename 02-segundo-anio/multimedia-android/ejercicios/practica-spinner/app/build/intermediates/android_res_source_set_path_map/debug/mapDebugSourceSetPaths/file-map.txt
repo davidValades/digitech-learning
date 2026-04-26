@@ -1,0 +1,7 @@
+com.valades.practica_spinner.app-pngs-0 C:\Users\David\Desktop\reposGit\digitech-learning\02-segundo-anio\multimedia-android\ejercicios\practicaspinner\app\build\generated\res\pngs\debug
+com.valades.practica_spinner.app-updated_navigation_xml-1 C:\Users\David\Desktop\reposGit\digitech-learning\02-segundo-anio\multimedia-android\ejercicios\practicaspinner\app\build\generated\updated_navigation_xml\debug
+com.valades.practica_spinner.app-packageDebugResources-2 C:\Users\David\Desktop\reposGit\digitech-learning\02-segundo-anio\multimedia-android\ejercicios\practicaspinner\app\build\intermediates\incremental\debug\packageDebugResources\merged.dir
+com.valades.practica_spinner.app-packageDebugResources-3 C:\Users\David\Desktop\reposGit\digitech-learning\02-segundo-anio\multimedia-android\ejercicios\practicaspinner\app\build\intermediates\incremental\debug\packageDebugResources\stripped.dir
+com.valades.practica_spinner.app-debug-4 C:\Users\David\Desktop\reposGit\digitech-learning\02-segundo-anio\multimedia-android\ejercicios\practicaspinner\app\build\intermediates\merged_res\debug\mergeDebugResources
+com.valades.practica_spinner.app-debug-5 C:\Users\David\Desktop\reposGit\digitech-learning\02-segundo-anio\multimedia-android\ejercicios\practicaspinner\app\src\debug\res
+com.valades.practica_spinner.app-main-6 C:\Users\David\Desktop\reposGit\digitech-learning\02-segundo-anio\multimedia-android\ejercicios\practicaspinner\app\src\main\res
