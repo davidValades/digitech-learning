@@ -14,23 +14,27 @@ Este repositorio contiene una serie de retos prácticos avanzados enfocados en l
 El proyecto se divide en 4 bloques funcionales donde se ha priorizado el rendimiento, la escalabilidad y las buenas prácticas:
 
 ### 1. ⏱️ Reloj, Gestión de Estados y UI Dinámica
-* **Motor en Tiempo Real:** Uso de `setInterval()` para la actualización continua del DOM sin recargar la página.
-* **Gestión de Zonas Horarias:** Implementación de variables de estado (`esCanarias`) para alternar dinámicamente entre la hora peninsular y UTC+0.
-* **Modals Customizados:** Sustitución de los `alert()` y `confirm()` nativos del navegador por ventanas modales en HTML/CSS, mejorando drásticamente la UX al alternar entre formatos de 12h y 24h.
-* **Dark Mode Automático:** Inyección y manipulación de variables nativas de CSS (`:root`) mediante JavaScript (`setProperty`) para transicionar a un tema *Azul Noche* basándose en la hora detectada.
+
+- **Motor en Tiempo Real:** Uso de `setInterval()` para la actualización continua del DOM sin recargar la página.
+- **Gestión de Zonas Horarias:** Implementación de variables de estado (`esCanarias`) para alternar dinámicamente entre la hora peninsular y UTC+0.
+- **Modals Customizados:** Sustitución de los `alert()` y `confirm()` nativos del navegador por ventanas modales en HTML/CSS, mejorando drásticamente la UX al alternar entre formatos de 12h y 24h.
+- **Dark Mode Automático:** Inyección y manipulación de variables nativas de CSS (`:root`) mediante JavaScript (`setProperty`) para transicionar a un tema _Azul Noche_ basándose en la hora detectada.
 
 ### 2. 🚀 Criptografía y Hardware Safeguard (Punto Bonus)
-* **Criba de Eratóstenes vs Fuerza Bruta:** Laboratorio de pruebas para comparar el cálculo tradicional de números primos frente a algoritmos optimizados.
-* **Benchmarking:** Uso de `performance.now()` para medir el tiempo de ejecución en milisegundos con alta precisión.
-* **Protección del Navegador (Safe Guards):** * Bloqueo de peticiones superiores a 5.000.000 para evitar el desbordamiento de memoria.
-  * Límite de renderizado en el DOM (máximo 1.000 nodos inyectados visualmente) previniendo el colapso del "Main Thread" del navegador, ocultando el resto de forma segura.
+
+- **Criba de Eratóstenes vs Fuerza Bruta:** Laboratorio de pruebas para comparar el cálculo tradicional de números primos frente a algoritmos optimizados.
+- **Benchmarking:** Uso de `performance.now()` para medir el tiempo de ejecución en milisegundos con alta precisión.
+- **Protección del Navegador (Safe Guards):** \* Bloqueo de peticiones superiores a 5.000.000 para evitar el desbordamiento de memoria.
+  - Límite de renderizado en el DOM (máximo 1.000 nodos inyectados visualmente) previniendo el colapso del "Main Thread" del navegador, ocultando el resto de forma segura.
 
 ### 3. 🔄 Eficiencia en Bucles (Múltiplos de 3 y 11)
-* **Algoritmia de Saltos:** Demostración empírica de cómo un bucle condicional (`i % 3 === 0`) es infinitamente menos eficiente que una reestructuración de la lógica de iteración (`i += 3` y `i += 11`). Reducción drástica del coste computacional.
+
+- **Algoritmia de Saltos:** Demostración empírica de cómo un bucle condicional (`i % 3 === 0`) es infinitamente menos eficiente que una reestructuración de la lógica de iteración (`i += 3` y `i += 11`). Reducción drástica del coste computacional.
 
 ### 4. 📚 DOM CRUD (Books To-Do List)
-* **Manipulación Directa del Árbol DOM:** Aplicación de gestión de libros implementando `document.createElement()` y `appendChild()`.
-* **Delegación y Destrucción:** Asignación dinámica de `EventListeners` a nodos recién creados para permitir el borrado individualizado de registros (`element.remove()`).
+
+- **Manipulación Directa del Árbol DOM:** Aplicación de gestión de libros implementando `document.createElement()` y `appendChild()`.
+- **Delegación y Destrucción:** Asignación dinámica de `EventListeners` a nodos recién creados para permitir el borrado individualizado de registros (`element.remove()`).
 
 ---
 
@@ -67,3 +71,7 @@ digitech-ejercicios/
     ├── multiplos11.js          # Algoritmos iterativos base 11
     └── books.js                # Lógica CRUD de nodos HTML
 ```
+
+---
+
+⭐ Ejercicio realizado para el módulo de Desarrollo de Interfaces - [David Valadés Navarro](https://github.com/davidValades)
