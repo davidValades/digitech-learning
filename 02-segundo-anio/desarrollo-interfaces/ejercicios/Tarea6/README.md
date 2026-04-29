@@ -1,6 +1,6 @@
 # 🎬 Tarea 6: Catálogo de Películas Dinámico (JSON + JS)
 
-![Status](https://img.shields.io/badge/Estado-En_Desarrollo_🚀-2ea44f?style=for-the-badge)
+![Status](https://img.shields.io/badge/Estado-Completado_✅-2ea44f?style=for-the-badge)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![JSON](https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white)
 
@@ -14,19 +14,18 @@ Este ejercicio forma parte del módulo de **Desarrollo de Interfaces** del segun
 
 Siguiendo los requerimientos técnicos de la **Práctica XML y JS**, el proyecto cumple con:
 
-- [x] **Gestión de Datos:** Creación de un origen de datos externo (JSON) con un mínimo de 8 películas.
+- [x] **Gestión de Datos:** Creación de un origen de datos externo (JSON) con 8 películas y consumo de imágenes externas mediante CDN (TMDB).
 - [x] **Esquema de Información:** Cada entrada incluye dirección, duración, nacionalidad, actores, género y sinopsis.
-- [x] **Interfaz Dinámica:** Disposición básica en HTML preparada para recibir nodos generados por JS.
-- [ ] **Lógica de Programación:** - Conexión con el archivo JSON mediante la Fetch API.
-  - Creación de un array de objetos para el manejo de la información.
-  - Pintado automático de nodos (cards) en el DOM.
-  - Evento de clic en la imagen para revelar la ficha técnica de la película.
+- [x] **Interfaz Dinámica:** Disposición básica en HTML utilizando CSS Grid para organizar las tarjetas de las películas de forma responsiva.
+- [x] **Lógica de Programación:** - Conexión asíncrona (`async/await`) con el archivo JSON mediante la Fetch API.
+  - Destructuración de objetos y creación dinámica de nodos en el DOM (`createElement`, `appendChild`).
+  - **Mejora UI/UX:** Evento de clic en la imagen para revelar la ficha técnica de la película inyectando los datos en un **Modal dinámico y reutilizable**, manteniendo el DOM ligero.
 
 ## 🛠️ Stack Tecnológico
 
-- **HTML5:** Estructura para el catálogo.
-- **CSS3:** Maquetación de la rejilla de películas y efectos visuales.
-- **JavaScript (ES6+):** Manipulación del DOM y Fetch API.
+- **HTML5:** Estructura semántica.
+- **CSS3:** Maquetación de la rejilla (Grid), Flexbox para el modal, variables nativas y animaciones de transición.
+- **JavaScript (ES6+):** Manipulación del DOM, Fetch API, Template Literals y gestión del alcance de variables (Scope).
 - **JSON:** Estructura de datos ligera.
 
 ## 📁 Estructura del Proyecto
