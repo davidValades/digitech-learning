@@ -1,4 +1,4 @@
-content = """# 🎬 Tarea 6: Catálogo de Películas Dinámico (JSON + JS)
+# 🎬 Tarea 6: Catálogo de Películas Dinámico (JSON + JS)
 
 ![Status](https://img.shields.io/badge/Estado-En_Desarrollo_🚀-2ea44f?style=for-the-badge)
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
@@ -12,12 +12,12 @@ Este ejercicio forma parte del módulo de **Desarrollo de Interfaces** del segun
 
 ## 🎯 Objetivos de la Actividad
 
-Siguiendo los requerimientos técnicos de la **Práctica XML y JS** ([Actividad.pdf]), el proyecto cumple con:
+Siguiendo los requerimientos técnicos de la **Práctica XML y JS**, el proyecto cumple con:
 
 - [x] **Gestión de Datos:** Creación de un origen de datos externo (JSON) con un mínimo de 8 películas.
 - [x] **Esquema de Información:** Cada entrada incluye dirección, duración, nacionalidad, actores, género y sinopsis.
 - [x] **Interfaz Dinámica:** Disposición básica en HTML preparada para recibir nodos generados por JS.
-- [x] **Lógica de Programación:** - Conexión con el archivo JSON mediante la Fetch API.
+- [ ] **Lógica de Programación:** - Conexión con el archivo JSON mediante la Fetch API.
   - Creación de un array de objetos para el manejo de la información.
   - Pintado automático de nodos (cards) en el DOM.
   - Evento de clic en la imagen para revelar la ficha técnica de la película.
@@ -32,12 +32,18 @@ Siguiendo los requerimientos técnicos de la **Práctica XML y JS** ([Actividad.
 ## 📁 Estructura del Proyecto
 
 ```text
-tarea6/
-├── index.html          # Punto de entrada y contenedor del catálogo
-├── style.css           # Estilos para la disposición y diseño visual
-├── main.js             # Lógica: Fetch de datos, creación de nodos y eventos
-├── movies.json         # Fuente de datos con las 8 películas requeridas
-└── README.md           # Documentación de la tarea (este archivo)
+Tarea6/
+├── index.html
+├── README.md
+└── assets/
+    ├── css/
+    │   └── styles.css
+    ├── js/
+    │   └── main.js
+    └── json/
+        └── movies.json
 ```
 
-⭐ Ejercicio realizado para el módulo de Desarrollo de Interfaces - [David Valadés Navarro](https://github.com/davidValades)
+---
+
+_⭐ Ejercicio documentado por [David Valadés Navarro](https://github.com/davidValades) - Digitech FP._

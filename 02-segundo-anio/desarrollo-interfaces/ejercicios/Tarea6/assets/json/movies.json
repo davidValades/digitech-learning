@@ -1,0 +1,98 @@
+[
+  {
+    "ID": 0,
+    "Titulo": "Italian Job",
+    "Anio": "2003",
+    "Direccion": "F. Gary Gray",
+    "Duracion": "104 min",
+    "Nacionalidad": "Estados Unidos",
+    "Actores": "Mark Wahlberg, Charlize Theron, Edward Norton",
+    "Genero": "Acción, Crimen",
+    "Sinopsis": "Un grupo de ladrones planea un elaborado robo de oro en Italia, pero son traicionados por uno de los suyos.",
+    "Imagen": "https://www.themoviedb.org/t/p/w600_and_h900_face/qmS0qlJ7JJFZFqv6iTVDXyjn97r.jpg"
+  },
+  {
+    "ID": 1,
+    "Titulo": "Parker",
+    "Anio": "2013",
+    "Direccion": "Taylor Hackford",
+    "Duracion": "118 min",
+    "Nacionalidad": "Estados Unidos",
+    "Actores": "Jason Statham, Jennifer Lopez, Michael Chiklis",
+    "Genero": "Acción, Crimen",
+    "Sinopsis": "Un ladrón profesional con un estricto código ético es traicionado por su equipo y dado por muerto, buscando ahora venganza.",
+    "Imagen": "https://www.themoviedb.org/t/p/w600_and_h900_face/jZ0BBdtHk8HfjR2wdc6iqiXCooY.jpg"
+  },
+  {
+    "ID": 2,
+    "Titulo": "Blitz",
+    "Anio": "2011",
+    "Direccion": "Elliot Lester",
+    "Duracion": "91 min",
+    "Nacionalidad": "Reino Unido",
+    "Actores": "Jason Statham, Paddy Considine, Aidan Gillen",
+    "Genero": "Acción, Crimen",
+    "Sinopsis": "Un duro sargento de policía londinense se enfrenta a un asesino en serie que está atacando a los agentes de la ciudad.",
+    "Imagen": "https://www.themoviedb.org/t/p/w600_and_h900_face/5f4ZG4JdhIYHGJxY4RfWSz2pI6O.jpg"
+  },
+  {
+    "ID": 3,
+    "Titulo": "The One",
+    "Anio": "2001",
+    "Direccion": "James Wong",
+    "Duracion": "87 min",
+    "Nacionalidad": "Estados Unidos",
+    "Actores": "Jet Li, Delroy Lindo, Carla Gugino",
+    "Genero": "Acción, Ciencia Ficción",
+    "Sinopsis": "Un agente del multiverso debe detener a su yo malvado de otra dimensión, que busca eliminar a todas sus variantes para hacerse invencible.",
+    "Imagen": "https://www.themoviedb.org/t/p/w600_and_h900_face/gJTJUI65fkPe2X0bTblA6KkRfek.jpg"
+  },
+  {
+    "ID": 4,
+    "Titulo": "Expendables 2",
+    "Anio": "2012",
+    "Direccion": "Simon West",
+    "Duracion": "102 min",
+    "Nacionalidad": "Estados Unidos",
+    "Actores": "Sylvester Stallone, Jason Statham, Jet Li",
+    "Genero": "Acción, Aventura",
+    "Sinopsis": "El equipo de mercenarios se reúne para una misión aparentemente sencilla que se convierte en una sangrienta búsqueda de venganza.",
+    "Imagen": "https://www.themoviedb.org/t/p/w600_and_h900_face/nnx0puR1AvuYH4iAg0WHH1QcYzE.jpg"
+  },
+  {
+    "ID": 5,
+    "Titulo": "Lock, Stock and Two Smoking Barrels",
+    "Anio": "1998",
+    "Direccion": "Guy Ritchie",
+    "Duracion": "107 min",
+    "Nacionalidad": "Reino Unido",
+    "Actores": "Jason Flemyng, Dexter Fletcher, Nick Moran",
+    "Genero": "Comedia, Crimen",
+    "Sinopsis": "Tras perder medio millón de libras en una partida de cartas amañada, cuatro amigos tienen una semana para saldar su deuda con un jefe criminal.",
+    "Imagen": "https://www.themoviedb.org/t/p/w600_and_h900_face/prewFR5HkUNpU1tNGUBPMal20rI.jpg"
+  },
+  {
+    "ID": 6,
+    "Titulo": "Safe",
+    "Anio": "2012",
+    "Direccion": "Boaz Yakin",
+    "Duracion": "104 min",
+    "Nacionalidad": "Estados Unidos",
+    "Actores": "Jason Statham, Chris Sarandon, Robert John Burke",
+    "Genero": "Acción, Crimen",
+    "Sinopsis": "Un ex-agente de la policía protege a una niña prodigio de las matemáticas que posee un código numérico valioso para las mafias.",
+    "Imagen": "https://www.themoviedb.org/t/p/w600_and_h900_face/nLqtvwAsgGl7QQTkBrGmHI1LzFA.jpg"
+  },
+  {
+    "ID": 7,
+    "Titulo": "En el nombre del rey",
+    "Anio": "2007",
+    "Direccion": "Uwe Boll",
+    "Duracion": "114 min",
+    "Nacionalidad": "Alemania",
+    "Actores": "Jason Statham, Leelee Sobieski, Ray Liotta",
+    "Genero": "Acción, Fantasía",
+    "Sinopsis": "Un hombre sencillo llamado Farmer debe rescatar a su esposa secuestrada y vengar la muerte de su hijo en un reino asediado por monstruos.",
+    "Imagen": "https://www.themoviedb.org/t/p/w600_and_h900_face/A7cyYbKkXClWb5oFB3lHa5E80xU.jpg"
+  }
+]
