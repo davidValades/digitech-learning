@@ -6,6 +6,7 @@
   --border-radius: 5px;
   --font-family: Arial, sans-serif;
   --font-size: 16px;
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -26,5 +27,102 @@ main {
 .peliculas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1rem;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.pelicula-card {
+  background-color: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.pelicula-card:hover {
+  transform: scale(1.05);
+}
+
+.pelicula-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.pelicula-card h3 {
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* modales */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#modal-info h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.modal-body {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start; /* Alinea los elementos arriba */
+}
+
+.modal-imagen {
+  width: 200px; /* Tamaño fijo para la foto del modal */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  object-fit: cover;
+}
+
+.modal-texto {
+  flex: 1;
+}
+
+.modal-texto p {
+  margin-bottom: 0.8rem;
+  line-height: 1.5;
+}
+
+.modal.mostrar {
+  display: flex;
+}
+
+.modal-contenido {
+  background-color: white;
+  padding: 2rem;
+  position: inherit;
+  margin: auto;
+  border-radius: var(--border-radius);
+  max-width: 50%;
+  width:50%;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--secondary-color);
 }
