@@ -5,111 +5,71 @@
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white)
 
-¡Hola! 👋 Bienvenido/a a mi repositorio de aprendizaje del **Grado Superior DAM DUAL** en Digitech.
-
-Este repositorio centraliza todo mi código, prácticas y proyectos. He organizado la estructura para que cada asignatura tenga su propio espacio dedicado a ejercicios y retos técnicos.
+¡Hola! 👋 Bienvenido/a a mi repositorio de aprendizaje del **Grado Superior DAM DUAL** en Digitech. Este espacio centraliza mi evolución técnica, desde los fundamentos de la programación hasta el desarrollo de sistemas complejos y seguros.
 
 ---
 
-## 🛠️ Stack Tecnológico Completo
+## 🛠️ Stack Tecnológico del Ciclo
 
-**Lenguajes & Desarrollo:**
-![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white)
+**Desarrollo de Software:**
+![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white) ![UML](https://img.shields.io/badge/UML-000000?style=for-the-badge)
 
-**Bases de Datos & Sistemas:**
-![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) ![UML](https://img.shields.io/badge/UML-000000?style=for-the-badge)
+**Datos y Sistemas:**
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Oracle](https://img.shields.io/badge/Oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white) ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) ![Cyber](https://img.shields.io/badge/Cybersecurity-FFD700?style=for-the-badge)
 
 ---
 
-## 📚 Estructura de Navegación
+## 📚 Hoja de Ruta y Asignaturas
 
-Haz clic en el nombre de la asignatura para acceder a su carpeta de ejercicios.
-
-<details>
-  <summary><b>📂 Primer Año (Completado)</b> | 🟩🟩🟩🟩🟩🟩🟨</summary>
-
-- [x] [**Programación JAVA**](./01-primer-anio/programacion-java)
-- [x] [**Sistemas informáticos**](./01-primer-anio/sistemas-informaticos)
-- [x] [**Posicionamiento y optimización web**](./01-primer-anio/posicionamiento-seo)
-- [x] [**Lenguaje de marcas**](./01-primer-anio/lenguaje-de-marcas)
-- [x] [**Inglés Técnico**](./01-primer-anio/ingles-tecnico)
-- [x] [**Entornos de desarrollo**](./01-primer-anio/entornos-de-desarrollo)
-- [ ] [**Bases de datos (Oracle/PL-SQL)**](./01-primer-anio/bases-de-datos)
-</details>
+La formación se divide en dos años académicos, cubriendo todo el espectro del desarrollo multiplataforma:
 
 <details open>
-  <summary><b>📂 Segundo Año (En Desarrollo)</b> | 🟩⬜⬜⬜⬜⬜⬜</summary>
+  <summary><b>📂 Primer Año: Fundamentos y Base Técnica</b></summary>
 
-- [ ] [**Acceso a datos**](./02-segundo-anio/acceso-a-datos)
-- [ ] [**Desarrollo de interfaces**](./02-segundo-anio/desarrollo-interfaces)
-- [ ] [**Programación multimedia (Android)**](./02-segundo-anio/multimedia-android)
-- [ ] [**Programación de servicios y procesos**](./02-segundo-anio/servicios-procesos)
-- [ ] [**Ciberseguridad**](./02-segundo-anio/ciberseguridad)
-- [ ] [**Sistemas de gestión empresarial**](./02-segundo-anio/gestion-empresarial)
-- [ ] [**Digitalización y Sostenibilidad**](./02-segundo-anio/sostenibilidad)
-- [x] [**Itinerario personal (Empleabilidad)**](./02-segundo-anio/itinerario-empleabilidad)
+- ☕ [**Programación JAVA**](./01-primer-anio/programacion-java): Lógica, POO y estructuras de datos.
+- 🗄️ [**Bases de Datos**](./01-primer-anio/bases-de-datos): Modelado y gestión con Oracle y PL/SQL.
+- 🏗️ [**Entornos de Desarrollo**](./01-primer-anio/entornos-de-desarrollo): Git, pruebas unitarias y metodologías.
+- 🐧 [**Sistemas Informáticos**](./01-primer-anio/sistemas-informaticos): Arquitectura, Microsoft y administración Linux.
+- 🌐 [**Lenguaje de Marcas**](./01-primer-anio/lenguaje-de-marcas): XML, HTML5 y maquetación.
+- 📈 [**Posicionamiento y Optimización Web**](./01-primer-anio/posicionamiento-seo): Estrategias SEO aplicadas al desarrollo.
+- 🇬🇧 [**Inglés Técnico**](./01-primer-anio/ingles-tecnico): Comunicación profesional en entornos IT.
+- 💼 [**Itinerario Personal I**](./01-primer-anio/itinerario-empleabilidad-1): Orientación y habilidades profesionales.
+</details>
+
+<details>
+  <summary><b>📂 Segundo Año: Especialización y Despliegue</b></summary>
+
+- 🛰️ [**Acceso a Datos**](./02-segundo-anio/acceso-a-datos): Persistencia, conectores Java y bases NoSQL.
+- 📱 [**Programación Multimedia**](./02-segundo-anio/multimedia-android): Desarrollo nativo para Android.
+- 💻 [**Desarrollo de Interfaces**](./02-segundo-anio/desarrollo-interfaces): UX/UI, componentes y usabilidad.
+- 🧵 [**Servicios y Procesos**](./02-segundo-anio/servicios-procesos): Programación concurrente, hilos y sockets.
+- 🛡️ [**Ciberseguridad**](./02-segundo-anio/ciberseguridad): Auditoría, bastionado y seguridad en el desarrollo.
+- 🏢 [**Sistemas de Gestión Empresarial**](./02-segundo-anio/gestion-empresarial): Implementación y personalización de ERP/CRM.
+- 🤖 [**Digitalización Aplicada**](./02-segundo-anio/digitalizacion): Transformación digital y nuevas tecnologías.
+- 🌿 [**Sostenibilidad Aplicada**](./02-segundo-anio/sostenibilidad): Green IT y desarrollo sostenible.
+- 💼 [**Itinerario Personal II**](./02-segundo-anio/itinerario-empleabilidad-2): Empleabilidad y emprendimiento.
+- 🏢 [**FCT (Prácticas)**](./02-segundo-anio/practicas): Formación en Centros de Trabajo.
 </details>
 
 ---
 
-# 🌳 El Árbol de Directorios (Tree)
+## 💼 Proyectos Destacados del Ciclo
+
+| Proyecto            | Asignaturas              | Foco Técnico                       | Enlace                                                          |
+| :------------------ | :----------------------- | :--------------------------------- | :-------------------------------------------------------------- |
+| **Landing Rodihab** | Lenguaje de Marcas / SEO | Semántica HTML y Core Web Vitals.  | [Ver Proyecto](https://github.com/davidvalades/Landing-rodihab) |
+| **Movie Catalog**   | Desarrollo de Interfaces | DOM Manipulation y UX interactiva. | [Ver Proyecto](https://github.com/davidValades/movie-catalog)   |
+
+---
+
+## 🌳 Estructura de Directorios
 
 ```text
 digitech-learning/
-├── 01-primer-anio/
-│   ├── bases-de-datos/
-│   ├── entornos-de-desarrollo/
-│   ├── ingles-tecnico/
-│   ├── lenguaje-de-marcas/
-│   ├── posicionamiento-seo/
-│   ├── programacion-java/
-│   └── sistemas-informaticos/
-├── 02-segundo-anio/
-│   ├── acceso-a-datos/
-│   │   ├── ejercicios/
-│   │   ├── proyectos/
-│   │   └── recursos/
-│   ├── ciberseguridad/
-│   │   ├── ejercicios/
-│   │   ├── proyectos/
-│   │   └── recursos/
-│   ├── desarrollo-interfaces/
-│   │   ├── ejercicios/
-│   │   ├── proyectos/
-│   │   └── recursos/
-│   ├── gestion-empresarial/
-│   │   ├── ejercicios/
-│   │   ├── proyectos/
-│   │   └── recursos/
-│   ├── itinerario-empleabilidad/
-│   │   ├── ejercicios/
-│   │   ├── proyectos/
-│   │   └── recursos/
-│   ├── multimedia-android/
-│   │   ├── ejercicios/
-│   │   ├── proyectos/
-│   │   └── recursos/
-│   ├── servicios-procesos/
-│   │   ├── ejercicios/
-│   │   ├── proyectos/
-│   │   └── recursos/
-│   └── sostenibilidad/
-│       ├── ejercicios/
-│       ├── proyectos/
-│       └── recursos/
+├── 01-primer-anio/          # Fundamentos de Ingeniería de Software
+├── 02-segundo-anio/         # Especialización y Proyectos Avanzados
 └── README.md
 ```
-
----
-
-## 💼 Proyectos Destacados
-
-Aquí puedes ver la aplicación real de lo aprendido en las diferentes asignaturas del ciclo:
-
-| Proyecto                                                                             | Asignaturas Aplicadas    | Tecnologías                                                                                                                                                                                                                                                                                                                             | Enlace al Código                                                                |
-| :----------------------------------------------------------------------------------- | :----------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------ |
-| **[Landing Rodihab](./01-primer-anio/lenguaje-de-marcas/proyectos/landing-rodihab)** | Lenguaje de Marcas, SEO  | ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white)                                                                                                                            | [Ver Proyecto](./01-primer-anio/lenguaje-de-marcas/proyectos/landing-rodihab)   |
-| **[Movie Catalog](./02-segundo-anio/desarrollo-interfaces/proyectos/movie-catalog)** | Desarrollo de Interfaces | ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=flat-square&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=flat-square&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=flat-square&logo=javascript&logoColor=%23F7DF1E) | [Ver Proyecto](./02-segundo-anio/desarrollo-interfaces/proyectos/movie-catalog) |
 
 ---
 
