@@ -63,7 +63,7 @@ El comando se ejecuta en primer plano (foreground). Muestra una advertencia por 
 
 **Requerimiento:** Lanza en segundo plano Firefox.
 
-    ```bash
+```bash
 firefox &
 ```
 
