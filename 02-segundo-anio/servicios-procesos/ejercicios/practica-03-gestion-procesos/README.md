@@ -288,3 +288,7 @@ kill -9 <PID1> <PID2>
 ```
 
 **Explicación:** Utilizamos `wc -l` (Word Count - Lines) concatenado mediante una tubería (`|`) para contar exactamente cuántos procesos tiene activos el usuario. Luego utilizamos `kill -9` (SIGKILL) contra dos IDs específicos.
+
+---
+
+⭐ **Práctica documentada por David Valadés Navarro**

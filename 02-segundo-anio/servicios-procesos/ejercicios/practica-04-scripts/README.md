@@ -1,6 +1,6 @@
 # 🐧 Scripting en Bash: Copia de Seguridad de Directorios (script2.sh)
 
-![Status](https://img.shields.io/badge/Estado-En_Desarrollo_🚀-2ea44f?style=for-the-badge)
+![Status](https://img.shields.io/badge/Estado-Completado_✅-2ea44f?style=for-the-badge)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
