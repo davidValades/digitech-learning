@@ -37,9 +37,9 @@ A continuación, se documentan las acciones solicitadas en la práctica junto co
 
 **Requerimiento:** Conecta como root para realizar las tareas.
 
-    ```bash
-    sudo su
-    ```
+```bash
+sudo su
+```
 
 **Explicación:**  
 Se utiliza sudo su para elevar los privilegios del usuario estándar al entorno del superusuario (root). Esto es necesario para tener permisos globales sobre la gestión de procesos del sistema.
@@ -50,9 +50,9 @@ Se utiliza sudo su para elevar los privilegios del usuario estándar al entorno 
 
 **Requerimiento:** Lanza el programa de LibreOffice.
 
-    ```bash
-    libreoffice
-    ```
+```bash
+libreoffice
+```
 
 **Observación:**  
 El comando se ejecuta en primer plano (foreground). Muestra una advertencia por la falta de un entorno Java (JVM), pero el proceso intenta iniciarse. Al estar en primer plano, la terminal queda bloqueada y no acepta nuevos comandos hasta que el proceso termine o sea interrumpido.
@@ -63,9 +63,9 @@ El comando se ejecuta en primer plano (foreground). Muestra una advertencia por 
 
 **Requerimiento:** Lanza en segundo plano Firefox.
 
-        ```bash
-    firefox &
-    ```
+    ```bash
+firefox &
+```
 
 **Explicación:**  
 El uso del operador & envía exitosamente el proceso a segundo plano, devolviendo un número de trabajo [1] y su PID (ej. 3077). Sin embargo, el proceso finaliza inmediatamente con un error de $XAUTHORITY. Esto ocurre como medida de seguridad de Linux: Firefox (y otros paquetes Snap) bloquea su ejecución con privilegios de root dentro de la sesión gráfica de un usuario estándar para prevenir vulnerabilidades de secuestro de sesión.
@@ -76,9 +76,9 @@ El uso del operador & envía exitosamente el proceso a segundo plano, devolviend
 
 **Requerimiento:** Lista todos los procesos con la herramienta `top`.
 
-    ```bash
-    top
-    ```
+```bash
+top
+```
 
 **Salida / Observación:**  
 La herramienta `top` proporciona una vista dinámica y en tiempo real de los procesos del sistema. Columnas críticas como `%CPU` y `%MEM` permiten identificar cuellos de botella en el rendimiento, mientras que el `PID` es fundamental para gestionar el ciclo de vida del proceso (ej. enviar señales SIGKILL). Se pulsa la tecla `q` para salir.
@@ -89,9 +89,9 @@ La herramienta `top` proporciona una vista dinámica y en tiempo real de los pro
 
 **Requerimiento:** Lanza en segundo plano otra vez Firefox.
 
-    ```bash
-    firefox &
-    ```
+```bash
+firefox &
+```
 
 **Explicacion:** 
 Se repite la acción del Paso 3 para consolidar el uso del operador `&`, el cual desacopla el proceso de la terminal actual, permitiendo que el usuario `root` continúe introduciendo comandos sin interrupción.
@@ -102,9 +102,9 @@ Se repite la acción del Paso 3 para consolidar el uso del operador `&`, el cual
 
 **Requerimiento:** Lanza el proceso de gedit, que abre el archivo de usuarios del sistema con un retardo de 20seg.
 
-    ```bash
-    (sleep 20 && gedit /etc/passwd) &
-    ```
+```bash
+(sleep 20 && gedit /etc/passwd) &
+```
 
 **Explicación:**
 Este comando demuestra la orquestación básica de tareas en Bash.
