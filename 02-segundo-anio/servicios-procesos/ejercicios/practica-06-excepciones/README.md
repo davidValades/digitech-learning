@@ -80,3 +80,5 @@ Resultado: 75
 🚨 Error Crítico: No se puede dividir por cero.
 🔒 Ejecución finalizada. Recursos liberados.
 ```
+
+_⭐ Práctica documentada por David Valadés Navarro
