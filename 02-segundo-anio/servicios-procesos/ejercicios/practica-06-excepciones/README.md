@@ -81,4 +81,4 @@ Resultado: 75
 🔒 Ejecución finalizada. Recursos liberados.
 ```
 
-_⭐ Práctica documentada por David Valadés Navarro
+⭐ **Práctica documentada por David Valadés Navarro**
