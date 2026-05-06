@@ -7,11 +7,11 @@ Este proyecto aborda uno de los pilares de la programación Backend y la robuste
 
 ## 🎯 Objetivo de la Práctica
 
-Diseñar un programa interactivo que realice la división matemática de dos números[cite: 13], controlando el flujo de ejecución mediante excepciones para cumplir con las siguientes reglas de negocio obligatorias:
+Diseñar un programa interactivo que realice la división matemática de dos números, controlando el flujo de ejecución mediante excepciones para cumplir con las siguientes reglas de negocio obligatorias:
 
-1. **Protección Aritmética:** El segundo número (divisor) no puede ser cero[cite: 13].
-2. **Validación Positiva:** El primer número (dividendo) no puede ser cero ni menor que cero[cite: 13].
-3. **Límite de Operación:** El primer valor introducido debe ser estrictamente mayor que 100[cite: 13].
+1. **Protección Aritmética:** El segundo número (divisor) no puede ser cero
+2. **Validación Positiva:** El primer número (dividendo) no puede ser cero ni menor que cero.
+3. **Límite de Operación:** El primer valor introducido debe ser estrictamente mayor que 100.
 
 ## 🧠 Conceptos Técnicos Aplicados
 
