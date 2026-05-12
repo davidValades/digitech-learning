@@ -35,13 +35,13 @@ Descargamos el archivo `.ZIP` generado y lo descomprimimos en nuestro entorno lo
 1.  Abrimos nuestro IDE (IntelliJ IDEA) y seleccionamos `File > Open...`.
 2.  Elegimos la carpeta descomprimida `ejercicio8` [Ver Foto 1](1.png)
 3.  Esperamos a que IntelliJ resuelva y descargue las dependencias de Spring e Hibernate a través de Maven.
-4.  Comprobamos en la ruta `src/main/java/davidvalades/ejercicio8/Ejercicio8Application` que la clase principal tiene linkeada correctamente la anotación `@SpringBootApplication` \_[Ver Foto 2](2.png)
+4.  Comprobamos en la ruta `src/main/java/davidvalades/ejercicio8/Ejercicio8Application` que la clase principal tiene linkeada correctamente la anotación `@SpringBootApplication` [Ver Foto 2](2.png)
 
 ---
 
 ## 3. Creación del Modelo de Datos
 
-Dentro de `davidvalades.ejercicio8` creamos un paquete nuevo llamado `model`. En su interior, creamos una nueva clase Java (`New > Java Class`) llamada `Persona`, utilizando el código facilitado en la documentación de clase adaptado a nuestro paquete \_[Ver Foto 3](3.png)
+Dentro de `davidvalades.ejercicio8` creamos un paquete nuevo llamado `model`. En su interior, creamos una nueva clase Java (`New > Java Class`) llamada `Persona`, utilizando el código facilitado en la documentación de clase adaptado a nuestro paquete [Ver Foto 3](3.png)
 
 ```java
 package davidvalades.ejercicio8.model;
