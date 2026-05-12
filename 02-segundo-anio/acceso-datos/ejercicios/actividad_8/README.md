@@ -8,7 +8,7 @@ Descargamos las dependencias iniciales utilizando el generador oficial de Spring
 
 - **Project:** Maven
 - **Language:** Java
-- **Spring Boot:** 3.2.x _(Nota: Seleccionar la versión estable actual)_
+- **Spring Boot:** 4.0.6
 - **Java:** 21
 
 **Project Metadata:**
@@ -33,15 +33,15 @@ Descargamos el archivo `.ZIP` generado y lo descomprimimos en nuestro entorno lo
 ## 2. Preparación en el IDE
 
 1.  Abrimos nuestro IDE (IntelliJ IDEA) y seleccionamos `File > Open...`.
-2.  Elegimos la carpeta descomprimida `ejercicio8` _(Ver Foto 1)_.
+2.  Elegimos la carpeta descomprimida `ejercicio8` [Ver Foto 1](1.png)
 3.  Esperamos a que IntelliJ resuelva y descargue las dependencias de Spring e Hibernate a través de Maven.
-4.  Comprobamos en la ruta `src/main/java/davidvalades/ejercicio8/Ejercicio8Application` que la clase principal tiene linkeada correctamente la anotación `@SpringBootApplication` _(Ver Foto 2)_.
+4.  Comprobamos en la ruta `src/main/java/davidvalades/ejercicio8/Ejercicio8Application` que la clase principal tiene linkeada correctamente la anotación `@SpringBootApplication` \_[Ver Foto 2](2.png)
 
 ---
 
 ## 3. Creación del Modelo de Datos
 
-Dentro de `davidvalades.ejercicio8` creamos un paquete nuevo llamado `model`. En su interior, creamos una nueva clase Java (`New > Java Class`) llamada `Persona`, utilizando el código facilitado en la documentación de clase adaptado a nuestro paquete _(Ver Foto 3)_:
+Dentro de `davidvalades.ejercicio8` creamos un paquete nuevo llamado `model`. En su interior, creamos una nueva clase Java (`New > Java Class`) llamada `Persona`, utilizando el código facilitado en la documentación de clase adaptado a nuestro paquete \_[Ver Foto 3](3.png)
 
 ```java
 package davidvalades.ejercicio8.model;
@@ -117,7 +117,7 @@ public class Persona {
 
 ## 4. Configuración de la Conexión (.properties)
 
-Navegamos a la carpeta `src/main/resources` (Ver Foto 4) y configuramos el archivo `application.properties` con los datos de acceso a nuestro servidor local y las directivas de Hibernate (Ver Foto 5):
+Navegamos a la carpeta `src/main/resources` [Ver Foto 4](4.png) y configuramos el archivo `application.properties` con los datos de acceso a nuestro servidor local y las directivas de Hibernate [Ver Foto 5](5.png):
 
 ```Properties
 spring.application.name=ejercicio8
@@ -142,6 +142,8 @@ En nuestro cliente MySQL Workbench, abrimos una nueva consulta (Query) y ejecuta
 ```sql
 CREATE DATABASE ejercicio8_db;
 ```
+
+[Ver Foto 6](6.png)
 
 ---
 
