@@ -34,7 +34,7 @@
                     <!-- Teléfono -->
                     <div>
                         <label for="telefono" class="block text-sm font-medium text-slate-700 mb-1">Teléfono</label>
-                        <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all" placeholder="+34 600 000 000">
+                        <input type="tel" id="telefono" name="telefono" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all" placeholder="600 000 000">
                     </div>
                     <!-- Fecha  -->
                     <div>
@@ -47,17 +47,17 @@
                 <div>
                     <label for="asunto" class="block text-sm font-medium text-slate-700 mb-1">Asunto</label>
                     <select id="asunto" name="asunto" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all bg-white">
-                        <option value="">Selecciona el motivo de tu contacto...</option>
+                        <option value="">Selecciona...</option>
                         <option value="desarrollo">Desarrollo Web / App</option>
-                        <option value="fisioterapia">Consulta Clínica / Fisioterapia</option>
-                        <option value="otros">Otros</option>
+                        <option value="fisioterapia">Ciber Seguridad</option>
+                        <option value="otros">Desarrollo de Interfaces</option>
                     </select>
                 </div>
 
                 <!-- Mensaje -->
                 <div>
                     <label for="mensaje" class="block text-sm font-medium text-slate-700 mb-1">Mensaje</label>
-                    <textarea id="mensaje" rows="4" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all" placeholder="Escribe tu consulta aquí..."></textarea>
+                    <textarea id="mensaje" rows="4" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all" placeholder="Escribe el mensaje aquí..."></textarea>
                 </div>
 
                 <!-- Botones -->
@@ -76,9 +76,10 @@
         <section class="bg-white p-8 rounded-xl shadow-sm border border-slate-200">
             <h2 class="text-xl font-semibold text-slate-800 mb-4 border-l-4 border-indigo-500 pl-3">2. ¿Qué es Tailwind CSS?</h2>
             <p class="text-slate-600 mb-6 leading-relaxed">
-                Tailwind CSS es un framework de CSS de tipo <strong>utility-first</strong> (primero utilidades). A diferencia de los frameworks tradicionales que proporcionan componentes pre-diseñados, Tailwind ofrece clases de bajo nivel que se aplican directamente en el HTML para construir diseños a medida sin tener que escribir código CSS personalizado ni abandonar el archivo HTML.
+                Tailwind CSS es un framework de CSS de tipo utility-first (primero utilidades). A diferencia de los frameworks tradicionales que proporcionan componentes pre-diseñados, Tailwind ofrece clases de bajo nivel que se aplican directamente en el HTML para construir diseños a medida sin tener que escribir código CSS personalizado ni abandonar el archivo HTML.
             </p>
             
+            <!-- Grid x2 para ventajas/desventajas -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <!-- Ventajas -->
                 <div class="bg-green-50 p-5 rounded-lg border border-green-100">
@@ -87,10 +88,10 @@
                         Ventajas
                     </h3>
                     <ul class="list-disc list-inside text-sm text-green-900 space-y-2">
-                        <li>Desarrollo rápido sin cambiar de contexto.</li>
-                        <li>Archivos CSS mínimos en producción (PurgeCSS).</li>
-                        <li>Libertad estética total; no impone un diseño.</li>
-                        <li>Adiós a inventar nombres de clases semánticos.</li>
+                        <li><strong>Flexibilidad y Personalización</strong> Tailwind permite a los desarrolladores crear diseños completamente personalizados sin la necesidad de sobreescribir estilos predefinidos. Esto es especialmente útil en proyectos donde se requiere una identidad visual única.</li>
+                        <li><strong>Curva de Aprendizaje Rápida</strong> Una vez que los desarrolladores se familiarizan con las clases utilitarias de Tailwind, pueden implementar estilos rápidamente. La documentación clara y bien estructurada facilita la comprensión de cómo utilizar el framework.</li>
+                        <li><strong>Estilo Consistente</strong> Tailwind CSS promueve un diseño coherente en toda la aplicación. Al utilizar clases predefinidas, los desarrolladores pueden mantener una estética uniforme en sus proyectos, reduciendo la posibilidad de inconsistencias.</li>
+                        <li><strong>Herramientas de Optimización</strong> Tailwind incluye herramientas de optimización como PurgeCSS, que elimina las clases no utilizadas en la producción, resultando en un archivo CSS más ligero y rápido de cargar.</li>
                     </ul>
                 </div>
                 <!-- Desventajas -->
@@ -100,9 +101,9 @@
                         Desventajas
                     </h3>
                     <ul class="list-disc list-inside text-sm text-red-900 space-y-2">
-                        <li>HTML visualmente saturado ("sopa de clases").</li>
-                        <li>Curva de aprendizaje inicial pronunciada.</li>
-                        <li>Ausencia de componentes prefabricados.</li>
+                        <li><strong>Verbosidad en el HTML</strong> El enfoque utilitario puede llevar a un marcado HTML más verboso, ya que se deben agregar múltiples clases a los elementos. Esto puede hacer que el código sea menos legible para algunos desarrolladores, especialmente aquellos que están acostumbrados a escribir CSS separado.</li>
+                        <li><strong>Dependencia de la Documentación</strong> Dado que Tailwind utiliza un enfoque basado en utilidades, los desarrolladores deben confiar en la documentación para recordar las clases disponibles y sus efectos. Esto puede ser un desafío para los nuevos usuarios que no están familiarizados con el sistema.</li>
+                        <li><strong>Curva de Aprendizaje Inicial</strong> Aunque la curva de aprendizaje es rápida, algunos desarrolladores pueden encontrar inicialmente desalentador el cambio de un enfoque tradicional de CSS a uno basado en utilidades.</li>
                     </ul>
                 </div>
             </div>
