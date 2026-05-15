@@ -1,24 +1,39 @@
 package com.valades.smartorder;
 
+import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.activity.EdgeToEdge;
+import android.view.View;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private CheckBox cbTerms;
+    private Button btnLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+
+        cbTerms = findViewById(R.id.cbTerms);
+        btnLogin = findViewById(R.id.btnLogin);
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cbTerms.isChecked()) {
+                    // Navegación con Intent
+                    Intent intent = new Intent(LoginActivity.this, ScanActivity.class);
+                    startActivity(intent);
+                    finish();
+                } else {
+                    // 1º Uso de la clase Toast
+                    Toast.makeText(LoginActivity.this, "Debes aceptar los Términos y Condiciones", Toast.LENGTH_SHORT).show();
+                }
+            }
         });
     }
 }
