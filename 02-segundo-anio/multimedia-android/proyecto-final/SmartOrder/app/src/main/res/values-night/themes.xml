@@ -1,7 +1,15 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Smartorder" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+    <style name="Base.Theme.SmartOrder" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Colores principales (Mantenemos la identidad en modo oscuro) -->
+        <item name="colorPrimary">@color/brand_orange</item>
+        <item name="colorSecondary">@color/brand_purple</item>
+        <item name="colorTertiary">@color/brand_teal</item>
+
+        <!-- Colores de fondo adaptados para descanso visual -->
+        <item name="android:windowBackground">@color/bg_dark</item>
+        <item name="colorOnBackground">@color/text_light</item>
+        <item name="colorOnPrimary">@color/text_dark</item>
     </style>
+
+    <style name="Theme.SmartOrder" parent="Base.Theme.SmartOrder" />
 </resources>
