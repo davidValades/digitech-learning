@@ -55,10 +55,11 @@ La formación se divide en dos años académicos, cubriendo todo el espectro del
 
 ## 💼 Proyectos Destacados del Ciclo
 
-| Proyecto            | Asignaturas              | Foco Técnico                       | Enlace                                                          |
-| :------------------ | :----------------------- | :--------------------------------- | :-------------------------------------------------------------- |
-| **Landing Rodihab** | Lenguaje de Marcas / SEO | Semántica HTML y Core Web Vitals.  | [Ver Proyecto](https://github.com/davidvalades/Landing-rodihab) |
-| **Movie Catalog**   | Desarrollo de Interfaces | DOM Manipulation y UX interactiva. | [Ver Proyecto](https://github.com/davidValades/movie-catalog)   |
+| Proyecto            | Asignaturas              | Foco Técnico                                 | Enlace                                                                         |
+| :------------------ | :----------------------- | :------------------------------------------- | :----------------------------------------------------------------------------- |
+| **Landing Rodihab** | Lenguaje de Marcas / SEO | Semántica HTML y Core Web Vitals.            | [Ver Proyecto](https://github.com/davidvalades/Landing-rodihab)                |
+| **Movie Catalog**   | Desarrollo de Interfaces | DOM Manipulation y UX interactiva.           | [Ver Proyecto](https://github.com/davidValades/movie-catalog)                  |
+| **SmartOrder**      | Programación Multimedia  | App nativa en Java, Intents y UI adaptativa. | [Ver Proyecto](./02-segundo-anio/multimedia-android/proyecto-final/SmartOrder) |
 
 ---
 
