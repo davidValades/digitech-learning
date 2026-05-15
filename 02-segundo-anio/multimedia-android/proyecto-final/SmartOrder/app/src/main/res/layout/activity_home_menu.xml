@@ -1,10 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    android:padding="24dp"
+    android:background="@color/bg_light">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nuestra Carta"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"
+        android:layout_marginTop="24dp"/>
+
+    <Button
+        android:id="@+id/btnStarters"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Entrantes"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/brand_orange" />
+
+    <Button
+        android:id="@+id/btnMains"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Platos Principales"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/brand_teal" />
+
+    <Button
+        android:id="@+id/btnDrinks"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Bebidas"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/brand_purple" />
 
 </LinearLayout>

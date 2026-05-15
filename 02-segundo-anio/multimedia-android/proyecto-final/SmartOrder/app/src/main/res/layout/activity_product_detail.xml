@@ -1,10 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    android:background="@color/bg_light">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:src="@android:drawable/ic_menu_gallery"
+        android:scaleType="centerCrop"
+        android:background="#D3D3D3"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hamburguesa Smash"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_dark"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doble carne de ternera, queso cheddar fundido, cebolla caramelizada y salsa especial de la casa."
+            android:layout_marginTop="8dp"
+            android:textColor="#666666"
+            android:lineSpacingExtra="4dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opciones de preparación:"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold"
+            android:textColor="@color/text_dark"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            android:background="@color/white"
+            android:padding="12dp">
+
+            <CheckBox
+                android:id="@+id/cbGlutenFree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pan sin gluten (+1.50 €)" />
+
+            <CheckBox
+                android:id="@+id/cbLactoseFree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sin queso (Sin lactosa)" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnAddCart"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Añadir al Carrito - 12.50 €"
+            android:layout_marginTop="32dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/brand_orange" />
+    </LinearLayout>
 </LinearLayout>
