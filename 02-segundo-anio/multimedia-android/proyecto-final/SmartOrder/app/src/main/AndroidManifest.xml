@@ -11,29 +11,49 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartOrder">
-
+        <activity
+            android:name=".bg_circle_badge"
+            android:exported="false" />
         <!-- SplashActivity como punto de entrada principal -->
         <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ReviewAndInfoActivity" android:exported="false" />
-        <activity android:name=".ConfirmationActivity" android:exported="false" />
-        <activity android:name=".PaymentActivity" android:exported="false" />
-        <activity android:name=".CartActivity" android:exported="false" />
-        <activity android:name=".ProductDetailActivity" android:exported="false" />
-        <activity android:name=".ProductListActivity" android:exported="false" />
-        <activity android:name=".HomeMenuActivity" android:exported="false" />
-        <activity android:name=".ScanActivity" android:exported="false" />
-        <activity android:name=".LoginActivity" android:exported="false" />
-
-        <!-- Puedes mantener MainActivity en false si la vas a usar después, o borrarla -->
-        <activity android:name=".MainActivity" android:exported="false" />
-
+        <activity
+            android:name=".ReviewAndInfoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PaymentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProductListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" /> <!-- Puedes mantener MainActivity en false si la vas a usar después, o borrarla -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
     </application>
+
 </manifest>
