@@ -18,7 +18,6 @@ public class HomeMenuActivity extends AppCompatActivity {
 
         final LinearLayout layoutHeader = findViewById(R.id.layoutHeader);
         ScrollView menuScrollView = findViewById(R.id.menuScrollView);
-        // Buscamos el contenedor entero en vez de solo la imagen
         LinearLayout btnHeaderCartContainer = findViewById(R.id.btnHeaderCartContainer);
 
         LinearLayout cardStarters = findViewById(R.id.cardStarters);
@@ -26,7 +25,10 @@ public class HomeMenuActivity extends AppCompatActivity {
         LinearLayout cardDrinks = findViewById(R.id.cardDrinks);
         LinearLayout cardSalads = findViewById(R.id.cardSalads);
         LinearLayout cardDesserts = findViewById(R.id.cardDesserts);
+
+        // Referencias del Footer
         LinearLayout navScan = findViewById(R.id.navScan);
+        LinearLayout navProfile = findViewById(R.id.navProfile); // <-- ESTO FALTABA
 
         if (menuScrollView != null) {
             menuScrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
@@ -77,15 +79,23 @@ public class HomeMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // <-- ESTA LÓGICA FALTABA PARA IR AL PERFIL
+        navProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeMenuActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    // Actualiza el globo rojo al volver a la pantalla
     @Override
     protected void onResume() {
         super.onResume();
         TextView tvCartBadge = findViewById(R.id.tvCartBadge);
         if (tvCartBadge != null) {
-            int totalItems = CartManager.productosEnCarrito.size();
+            int totalItems = CartManager.obtenerTotalItems();
             if (totalItems > 0) {
                 tvCartBadge.setVisibility(View.VISIBLE);
                 tvCartBadge.setText(String.valueOf(totalItems));

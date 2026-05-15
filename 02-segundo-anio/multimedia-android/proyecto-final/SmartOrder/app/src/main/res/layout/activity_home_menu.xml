@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F9FAFB"
+    android:background="@color/app_background"
     android:clipChildren="false">
 
     <LinearLayout
@@ -46,7 +47,7 @@
                     android:layout_width="28dp"
                     android:layout_height="28dp"
                     android:src="@drawable/ic_cart"
-                    android:tint="@color/white"/>
+                    app:tint="@color/white"/>
 
                 <TextView
                     android:id="@+id/tvCartBadge"
@@ -99,12 +100,12 @@
                     android:text="Entrantes"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_dark"/>
+                    android:textColor="@color/text_primary"/>
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@android:drawable/ic_media_play"
-                    android:tint="@color/brand_purple"/>
+                    app:tint="@color/brand_purple"/>
             </LinearLayout>
 
             <LinearLayout
@@ -126,12 +127,12 @@
                     android:text="Platos Principales"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_dark"/>
+                    android:textColor="@color/text_primary"/>
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@android:drawable/ic_media_play"
-                    android:tint="@color/brand_purple"/>
+                    app:tint="@color/brand_purple"/>
             </LinearLayout>
 
             <LinearLayout
@@ -153,12 +154,12 @@
                     android:text="Bebidas"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_dark"/>
+                    android:textColor="@color/text_primary"/>
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@android:drawable/ic_media_play"
-                    android:tint="@color/brand_purple"/>
+                    app:tint="@color/brand_purple"/>
             </LinearLayout>
 
             <LinearLayout
@@ -180,12 +181,12 @@
                     android:text="Ensaladas"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_dark"/>
+                    android:textColor="@color/text_primary"/>
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@android:drawable/ic_media_play"
-                    android:tint="@color/brand_purple"/>
+                    app:tint="@color/brand_purple"/>
             </LinearLayout>
 
             <LinearLayout
@@ -207,12 +208,12 @@
                     android:text="Postres"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_dark"/>
+                    android:textColor="@color/text_primary"/>
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@android:drawable/ic_media_play"
-                    android:tint="@color/brand_purple"/>
+                    app:tint="@color/brand_purple"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -238,7 +239,7 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_home"
-                android:tint="@color/brand_purple"/>
+                app:tint="@color/brand_purple"/>
         </LinearLayout>
 
         <LinearLayout
@@ -262,7 +263,7 @@
                     android:layout_height="32dp"
                     android:src="@android:drawable/ic_menu_camera"
                     android:scaleType="centerInside"
-                    android:tint="@color/white"/>
+                    app:tint="@color/white"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -278,7 +279,7 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_person"
-                android:tint="#9CA3AF"/>
+                app:tint="#9CA3AF"/>
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

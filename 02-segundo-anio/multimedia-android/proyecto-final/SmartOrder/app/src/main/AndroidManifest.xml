@@ -11,9 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartOrder">
-        <activity
-            android:name=".bg_circle_badge"
-            android:exported="false" />
+
         <!-- SplashActivity como punto de entrada principal -->
         <activity
             android:name=".SplashActivity"
@@ -53,6 +51,9 @@
             android:exported="false" /> <!-- Puedes mantener MainActivity en false si la vas a usar después, o borrarla -->
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfileActivity"
             android:exported="false" />
     </application>
 

@@ -1,14 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <style name="Base.Theme.SmartOrder" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Colores principales -->
-        <item name="android:statusBarColor">@color/brand_purple</item>        <item name="colorSecondary">@color/brand_purple</item>
-        <item name="colorTertiary">@color/brand_teal</item>
+    <style name="Theme.SmartOrder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_orange</item>
+        <item name="colorPrimaryVariant">@color/brand_orange</item>
 
-        <!-- Colores de fondo y superficies -->
-        <item name="android:windowBackground">@color/bg_light</item>
-        <item name="colorOnBackground">@color/text_dark</item>
+        <item name="colorSecondary">@color/brand_purple</item>
         <item name="colorOnPrimary">@color/white</item>
-    </style>
 
-    <style name="Theme.SmartOrder" parent="Base.Theme.SmartOrder" />
+        <item name="android:windowBackground">@color/app_background</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+
+        <item name="android:statusBarColor">@color/brand_purple</item>
+    </style>
 </resources>

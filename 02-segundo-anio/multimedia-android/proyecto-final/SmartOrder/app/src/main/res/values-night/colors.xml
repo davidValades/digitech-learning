@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_orange">#FC7331</color>
+
+    <color name="brand_purple">#6946AA</color>
+
+    <color name="brand_teal">#0FAAA4</color>
+    <color name="brand_green">#61B249</color>
+
+    <color name="app_background">#1C1C1E</color> <color name="card_background">#2C2C2E</color> <color name="text_primary">#E5E7EB</color> <color name="text_secondary">#9CA3AF</color> <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+</resources>

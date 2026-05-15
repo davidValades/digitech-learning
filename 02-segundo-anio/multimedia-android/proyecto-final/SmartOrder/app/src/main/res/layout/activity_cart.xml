@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F9FAFB"
+    android:background="@color/app_background"
     android:clipChildren="false">
 
     <LinearLayout
@@ -26,7 +27,7 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_arrow_left"
-                android:tint="@color/white"
+                app:tint="@color/white"
                 android:layout_marginRight="16dp"/>
 
             <TextView
@@ -67,18 +68,17 @@
                     android:text="Resumen de Artículos"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/text_dark"
+                    android:textColor="@color/text_primary"
                     android:layout_marginBottom="16dp"/>
 
-                <TextView
-                    android:id="@+id/tvCartItems"
+                <LinearLayout
+                    android:id="@+id/llCartItemsContainer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="El carrito está vacío"
-                    android:textSize="16sp"
-                    android:textColor="#6B7280"
-                    android:lineSpacingExtra="6dp"
-                    android:layout_marginBottom="24dp"/>
+                    android:orientation="vertical"
+                    android:layout_marginBottom="24dp">
+
+                </LinearLayout>
 
                 <View
                     android:layout_width="match_parent"
@@ -98,7 +98,7 @@
                         android:text="TOTAL A PAGAR"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="@color/text_dark"/>
+                        android:textColor="@color/text_primary"/>
 
                     <TextView
                         android:id="@+id/tvTotalPrice"
