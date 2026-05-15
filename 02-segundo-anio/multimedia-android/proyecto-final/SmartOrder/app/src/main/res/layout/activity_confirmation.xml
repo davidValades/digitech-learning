@@ -1,10 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="@color/bg_light">
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@android:drawable/ic_dialog_info"
+        android:backgroundTint="@color/brand_green"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Pedido Confirmado!"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tu comida estará lista en aproximadamente:"
+        android:textAlignment="center"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15 - 20 Minutos"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/brand_orange"
+        android:layout_marginBottom="48dp"/>
+
+    <Button
+        android:id="@+id/btnLeaveReview"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Dejar una Reseña"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/brand_purple" />
 
 </LinearLayout>

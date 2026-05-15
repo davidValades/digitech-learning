@@ -1,10 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LoginActivity">
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/bg_light">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Qué tal tu experiencia?"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="24dp"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numStars="5"
+        android:stepSize="1"
+        android:layout_marginBottom="32dp"/>
+
+    <Button
+        android:id="@+id/btnSubmitReview"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Enviar Reseña"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/brand_teal"
+        android:layout_marginBottom="32dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#CCCCCC"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descubre más sobre nosotros"
+        android:textColor="@color/text_dark"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnVisitWebsite"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="Visitar Web Oficial"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/brand_orange" />
 
 </LinearLayout>
