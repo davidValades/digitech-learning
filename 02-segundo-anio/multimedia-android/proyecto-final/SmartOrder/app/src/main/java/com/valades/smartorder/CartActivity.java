@@ -16,10 +16,21 @@ public class CartActivity extends AppCompatActivity {
     private TextView tvTotalPrice;
     private Button btnProceedToPayment;
 
+    // 1. CAMBIO: Añadimos las variables locales para guardar los IDs en el carrito
+    private String restaurantId = "";
+    private String tableId = "";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
+
+        // 2. CAMBIO: Recogemos los IDs que vienen viajando desde el HomeMenuActivity
+        Intent intentRecibido = getIntent();
+        if (intentRecibido != null) {
+            restaurantId = intentRecibido.getStringExtra("RESTAURANT_ID");
+            tableId = intentRecibido.getStringExtra("TABLE_ID");
+        }
 
         // Referencias
         ImageView btnBack = findViewById(R.id.btnBack);
@@ -32,8 +43,11 @@ public class CartActivity extends AppCompatActivity {
         btnBack.setOnClickListener(v -> finish());
         btnKeepShopping.setOnClickListener(v -> finish());
 
+        // 3. CAMBIO: Modificamos el click para inyectar los IDs hacia el PaymentActivity
         btnProceedToPayment.setOnClickListener(v -> {
             Intent intent = new Intent(CartActivity.this, PaymentActivity.class);
+            intent.putExtra("RESTAURANT_ID", restaurantId);
+            intent.putExtra("TABLE_ID", tableId);
             startActivity(intent);
         });
 
@@ -46,7 +60,6 @@ public class CartActivity extends AppCompatActivity {
         llCartItemsContainer.removeAllViews();
 
         if (CartManager.productosEnCarrito.isEmpty()) {
-            // Si está vacío, mostramos un mensaje (puedes crear un TextView dinámico)
             TextView emptyMsg = new TextView(this);
             emptyMsg.setText("Tu carrito está vacío");
             emptyMsg.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -61,6 +74,7 @@ public class CartActivity extends AppCompatActivity {
             // 2. Por cada producto en la memoria, "inflamos" una fila
             LayoutInflater inflater = LayoutInflater.from(this);
 
+            // Respetamos tu objeto de datos original: CartManager.CartItem
             for (CartManager.CartItem item : CartManager.productosEnCarrito) {
                 View rowView = inflater.inflate(R.layout.item_cart_row, null);
 

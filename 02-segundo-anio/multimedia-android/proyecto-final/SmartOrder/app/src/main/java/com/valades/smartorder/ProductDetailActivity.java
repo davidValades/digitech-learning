@@ -1,9 +1,12 @@
 package com.valades.smartorder;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -13,175 +16,147 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.squareup.picasso.Picasso;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.util.ArrayList;
+import java.util.List;
+
 public class ProductDetailActivity extends AppCompatActivity {
+
+    private double precioBaseCalculado = 0.0;
+    private List<CheckBoxExtra> listaExtrasDinamicos = new ArrayList<>();
+
+    // Clase auxiliar para guardar la info de cada extra que se genere dinámicamente
+    private class CheckBoxExtra {
+        CheckBox checkBox;
+        String nombreExtra;
+        double precioAdicional;
+
+        CheckBoxExtra(CheckBox cb, String nombre, double precio) {
+            this.checkBox = cb;
+            this.nombreExtra = nombre;
+            this.precioAdicional = precio;
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product_detail);
 
-        // Referencias del Header y ScrollView para el efecto elástico
         final LinearLayout layoutHeader = findViewById(R.id.layoutHeader);
         ScrollView detailScrollView = findViewById(R.id.detailScrollView);
         ImageView btnBack = findViewById(R.id.btnBack);
 
-        // Referencias de textos e imagen
         TextView tvDetailName = findViewById(R.id.tvDetailName);
-        ImageView ivDetailImage = findViewById(R.id.ivDetailImage); // NUEVA REFERENCIA
-
-        // Referencias de los Checkboxes (Requisito de la rúbrica)
-        CheckBox cbNoOnion = findViewById(R.id.cbNoOnion);
-        CheckBox cbGlutenFree = findViewById(R.id.cbGlutenFree);
-        CheckBox cbExtraBacon = findViewById(R.id.cbExtraBacon);
+        ImageView ivDetailImage = findViewById(R.id.ivDetailImage);
         final Button btnAddToCart = findViewById(R.id.btnAddToCart);
 
-        // Referencias de la Navegación Inferior
-        LinearLayout navHome = findViewById(R.id.navHome);
-        LinearLayout navScan = findViewById(R.id.navScan);
-        // Puedes añadir el navProfile aquí si lo tienes en el XML del detalle
+        // NUEVO CONTENEDOR DONDE SE DIBUJARÁN LOS EXTRAS
+        LinearLayout llExtrasContainer = findViewById(R.id.llExtrasContainer);
 
-        // --- 1. RECIBIR LOS DATOS REALES DE LA LISTA ---
+        // --- 1. RECIBIR LOS DATOS ---
         String nombrePlato = getIntent().getStringExtra("PRODUCTO_NOMBRE");
         String precioString = getIntent().getStringExtra("PRODUCTO_PRECIO");
+        String urlImagen = getIntent().getStringExtra("PRODUCTO_IMAGEN");
+        String extrasJson = getIntent().getStringExtra("PRODUCTO_EXTRAS");
 
-        // Valores por defecto por si falla algo
+        // --- SOLUCIÓN AL ERROR DE MEMORIA (TransactionTooLargeException) ---
+        // Si la etiqueta dice que usemos el proveedor, sacamos el texto gigante de la memoria
+        if ("USE_PROVIDER".equals(urlImagen)) {
+            urlImagen = ImageProvider.currentBase64Image;
+        }
+        // -------------------------------------------------------------------
+
         if (nombrePlato == null) nombrePlato = "Plato Delicioso";
-        if (precioString == null) precioString = "10.00 €";
+        if (precioString == null) precioString = "10.00";
+        if (extrasJson == null) extrasJson = "[]";
 
-        // Convertimos el precio de texto ("13.50 €") a número (13.50)
-        double precioCalculado = 10.00;
         try {
-            precioCalculado = Double.parseDouble(precioString.replace(" €", "").replace(",", "."));
-        } catch (Exception e) {
-            e.printStackTrace();
+            precioBaseCalculado = Double.parseDouble(precioString.replace(" €", "").replace(",", "."));
+        } catch (Exception e) { e.printStackTrace(); }
+
+        if (tvDetailName != null) tvDetailName.setText(nombrePlato);
+        actualizarBotonPrecio(btnAddToCart);
+
+        // --- 2. CARGA DE IMAGEN (BASE64 O PICASSO) ---
+        if (ivDetailImage != null && urlImagen != null && !urlImagen.isEmpty()) {
+            if (urlImagen.startsWith("data:image")) {
+                try {
+                    String base64Image = urlImagen.split(",")[1];
+                    byte[] decodedString = Base64.decode(base64Image, Base64.DEFAULT);
+                    Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+                    ivDetailImage.setImageBitmap(decodedByte);
+                } catch (Exception e) { e.printStackTrace(); }
+            } else {
+                Picasso.get().load(urlImagen).placeholder(R.drawable.bg_header_flat).fit().centerCrop().into(ivDetailImage);
+            }
         }
 
-        // --- 2. ACTUALIZAR LA PANTALLA ---
-        if (tvDetailName != null) {
-            tvDetailName.setText(nombrePlato);
-        }
-        btnAddToCart.setText("Añadir al carrito - " + precioString);
+        // --- 3. INFLADO DINÁMICO DE EXTRAS ---
+        if (llExtrasContainer != null) {
+            try {
+                JSONArray arrayExtras = new JSONArray(extrasJson);
+                if (arrayExtras.length() == 0) {
+                    TextView tvVacio = new TextView(this);
+                    tvVacio.setText("Este producto no tiene personalizaciones.");
+                    tvVacio.setTextColor(getResources().getColor(android.R.color.darker_gray));
+                    llExtrasContainer.addView(tvVacio);
+                } else {
+                    for (int i = 0; i < arrayExtras.length(); i++) {
+                        JSONObject extraObjeto = arrayExtras.getJSONObject(i);
+                        String nombreExtra = extraObjeto.getString("name");
+                        double precioExtra = extraObjeto.optDouble("price", 0.0);
 
-        // --- MAPEO DE LA IMAGEN (Fotorrealismo) ---
-        // Buscamos una palabra clave en el nombre para saber qué foto poner
-        if (ivDetailImage != null) {
-            String nombreMinusculas = nombrePlato.toLowerCase();
+                        // Crear el CheckBox en tiempo real
+                        CheckBox cb = new CheckBox(this);
+                        cb.setText(nombreExtra + (precioExtra > 0 ? String.format(" (+%.2f€)", precioExtra) : ""));
+                        cb.setTextSize(16);
+                        cb.setPadding(0, 10, 0, 10);
 
-            if (nombreMinusculas.contains("nachos")) ivDetailImage.setImageResource(R.drawable.nachos);
-            else if (nombreMinusculas.contains("tequeños")) ivDetailImage.setImageResource(R.drawable.tequenos);
-            else if (nombreMinusculas.contains("croquetas")) ivDetailImage.setImageResource(R.drawable.croquetas);
+                        // Si el usuario lo marca, recalculamos el precio del botón al instante
+                        cb.setOnCheckedChangeListener((buttonView, isChecked) -> actualizarBotonPrecio(btnAddToCart));
 
-            else if (nombreMinusculas.contains("burger")) ivDetailImage.setImageResource(R.drawable.smashburger);
-            else if (nombreMinusculas.contains("costillas")) ivDetailImage.setImageResource(R.drawable.costillas);
-            else if (nombreMinusculas.contains("tacos")) ivDetailImage.setImageResource(R.drawable.tacos);
-
-            else if (nombreMinusculas.contains("refresco")) ivDetailImage.setImageResource(R.drawable.cola);
-            else if (nombreMinusculas.contains("cerveza")) ivDetailImage.setImageResource(R.drawable.cerveza);
-            else if (nombreMinusculas.contains("agua")) ivDetailImage.setImageResource(R.drawable.agua);
-
-            else if (nombreMinusculas.contains("césar")) ivDetailImage.setImageResource(R.drawable.ensalada);
-            else if (nombreMinusculas.contains("mediterránea")) ivDetailImage.setImageResource(R.drawable.mediterranea);
-            else if (nombreMinusculas.contains("cabra")) ivDetailImage.setImageResource(R.drawable.queso_cabra);
-
-            else if (nombreMinusculas.contains("tarta")) ivDetailImage.setImageResource(R.drawable.tarta_queso);
-            else if (nombreMinusculas.contains("brownie")) ivDetailImage.setImageResource(R.drawable.brownie);
-            else if (nombreMinusculas.contains("tiramisú")) ivDetailImage.setImageResource(R.drawable.tiramisu);
-
-            else ivDetailImage.setImageResource(R.drawable.smashburger); // Imagen por defecto
+                        llExtrasContainer.addView(cb);
+                        listaExtrasDinamicos.add(new CheckBoxExtra(cb, nombreExtra, precioExtra));
+                    }
+                }
+            } catch (JSONException e) { e.printStackTrace(); }
         }
 
-        // Guardamos las variables como finales para usarlas dentro del botón
         final String nombreFinal = nombrePlato;
-        final double precioFinal = precioCalculado;
 
+        // --- 4. LÓGICA DEL BOTÓN AÑADIR ---
+        btnAddToCart.setOnClickListener(v -> {
+            String nombreA_Guardar = nombreFinal;
+            double precioFinalCalculado = precioBaseCalculado;
 
-        // --- 3. LÓGICA DEL BOTÓN AÑADIR (Dinámico y con Animación) ---
-        btnAddToCart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Evaluamos los extras
-                boolean isGlutenFree = cbGlutenFree != null && cbGlutenFree.isChecked();
-
-                String nombreA_Guardar = nombreFinal;
-                double precioA_Guardar = precioFinal;
-
-                if(isGlutenFree) {
-                    nombreA_Guardar += " (Sin Gluten)";
-                    precioA_Guardar += 1.50;
+            // Recorremos la lista para ver qué ha marcado el usuario
+            for (CheckBoxExtra extra : listaExtrasDinamicos) {
+                if (extra.checkBox.isChecked()) {
+                    nombreA_Guardar += "\n  + " + extra.nombreExtra; // Lo tabulamos para que quede bonito en el carrito
+                    precioFinalCalculado += extra.precioAdicional;
                 }
-
-                // Guardamos en memoria global
-                CartManager.agregarProducto(nombreA_Guardar, precioA_Guardar);
-
-                // EFECTO VISUAL (Animación de Éxito a verde)
-                btnAddToCart.setText("¡Añadido con éxito! \u2714");
-                btnAddToCart.setBackgroundTintList(android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#10B981")));
-
-                // Animación de "latido"
-                btnAddToCart.animate()
-                        .scaleX(1.05f).scaleY(1.05f)
-                        .setDuration(150)
-                        .withEndAction(new Runnable() {
-                            @Override
-                            public void run() {
-                                btnAddToCart.animate().scaleX(1f).scaleY(1f).setDuration(150);
-                            }
-                        }).start();
-
-                // RETRASO (Handler) antes de volver a la lista
-                new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        finish();
-                    }
-                }, 800);
             }
+
+            CartManager.agregarProducto(nombreA_Guardar, precioFinalCalculado);
+
+            btnAddToCart.setText("¡Añadido con éxito! ✔");
+            btnAddToCart.setBackgroundTintList(android.content.res.ColorStateList.valueOf(android.graphics.Color.parseColor("#10B981")));
+
+            new Handler(Looper.getMainLooper()).postDelayed(this::finish, 800);
         });
 
-        // --- EFECTO HEADER ELÁSTICO ---
-        if (detailScrollView != null) {
-            detailScrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-                @Override
-                public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-                    if (scrollY > 10) {
-                        layoutHeader.setBackgroundResource(R.drawable.bg_header_flat);
-                        layoutHeader.setElevation(8f);
-                    } else {
-                        layoutHeader.setBackgroundResource(R.drawable.bg_header_curved);
-                        layoutHeader.setElevation(0f);
-                    }
-                }
-            });
-        }
+        btnBack.setOnClickListener(v -> finish());
+    }
 
-        // Lógica del botón Atrás
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-        // Lógica del Footer
-        if (navHome != null) {
-            navHome.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(ProductDetailActivity.this, HomeMenuActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
-                }
-            });
+    private void actualizarBotonPrecio(Button btn) {
+        double precioActual = precioBaseCalculado;
+        for (CheckBoxExtra extra : listaExtrasDinamicos) {
+            if (extra.checkBox.isChecked()) precioActual += extra.precioAdicional;
         }
-
-        if (navScan != null) {
-            navScan.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(ProductDetailActivity.this, ScanActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }
+        btn.setText(String.format("Añadir al carrito - %.2f €", precioActual));
     }
 }

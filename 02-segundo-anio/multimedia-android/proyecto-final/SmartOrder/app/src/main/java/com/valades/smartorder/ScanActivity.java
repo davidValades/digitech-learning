@@ -1,27 +1,29 @@
 package com.valades.smartorder;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import com.google.zxing.ResultPoint;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.journeyapps.barcodescanner.BarcodeCallback;
 import com.journeyapps.barcodescanner.BarcodeResult;
 import com.journeyapps.barcodescanner.BarcodeView;
-import java.util.ArrayList;
+
 import java.util.List;
 
 public class ScanActivity extends AppCompatActivity {
 
+    private static final int CAMERA_PERMISSION_REQUEST_CODE = 200;
     private BarcodeView barcodeScannerView;
-    private String mesaSeleccionada = "Ninguna";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +31,12 @@ public class ScanActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scan);
 
         ImageView btnBack = findViewById(R.id.btnBack);
-        Button btnConfirmarMesa = findViewById(R.id.btnConfirmarMesa);
-        Button btnLlamarCamarero = findViewById(R.id.btnLlamarCamarero);
-        final EditText etCodigoLocal = findViewById(R.id.etCodigoLocal);
-        Spinner spinnerMesas = findViewById(R.id.spinnerMesas);
         barcodeScannerView = findViewById(R.id.barcodeScannerView);
 
-        // --- 1. CONFIGURACIÓN DEL LECTOR QR (CÁMARA REAL) ---
+        // --- 0. SOLICITUD DE PERMISOS ---
+        solicitarPermisoCamara();
+
+        // --- 1. QR: EL ESCÁNER ÓPTICO ---
         if (barcodeScannerView != null) {
             barcodeScannerView.decodeContinuous(new BarcodeCallback() {
                 @Override
@@ -43,88 +44,39 @@ public class ScanActivity extends AppCompatActivity {
                     barcodeScannerView.pause();
                     String resultadoQR = result.getText();
 
-                    // Cumplimos rúbrica: Uso de Toast contextual
-                    Toast.makeText(ScanActivity.this, "Mesa vinculada por QR: " + resultadoQR, Toast.LENGTH_LONG).show();
-                    viajarAlHome();
-                }
+                    try {
+                        Uri uri = Uri.parse(resultadoQR);
+                        List<String> pathSegments = uri.getPathSegments();
 
-                @Override
-                public void possibleResultPoints(List<ResultPoint> resultPoints) {}
+                        // Formato esperado de QR: smartorder://m/{RestaurantID}/{TableID}
+                        if (pathSegments.size() >= 3 && pathSegments.get(0).equals("m")) {
+                            String restaurantId = pathSegments.get(1);
+                            String tableId = pathSegments.get(2);
+                            viajarAlMenu(restaurantId, tableId);
+                        } else {
+                            Toast.makeText(ScanActivity.this, "Código QR no válido", Toast.LENGTH_SHORT).show();
+                            barcodeScannerView.resume();
+                        }
+                    } catch (Exception e) {
+                        Toast.makeText(ScanActivity.this, "Error leyendo QR", Toast.LENGTH_SHORT).show();
+                        barcodeScannerView.resume();
+                    }
+                }
             });
         }
 
-        // --- 2. CONFIGURACIÓN DEL SPINNER (REQUISITO RÚBRICA) ---
-        List<String> opcionesMesas = new ArrayList<>();
-        opcionesMesas.add("Selecciona mesa...");
-        for (int i = 1; i <= 12; i++) {
-            opcionesMesas.add("Mesa " + i);
+        // Botón físico/visual de retroceso
+        if (btnBack != null) {
+            btnBack.setOnClickListener(v -> finish());
         }
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, opcionesMesas);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerMesas.setAdapter(adapter);
-
-        spinnerMesas.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                if (position > 0) {
-                    mesaSeleccionada = parent.getItemAtPosition(position).toString();
-                } else {
-                    mesaSeleccionada = "Ninguna";
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {}
-        });
-
-        // --- 3. EVENTOS DE INTERACCIÓN DE LOS BOTONES ---
-
-        // Botón: Pedir desde la App (Flujo Digital Manual)
-        btnConfirmarMesa.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String inputLocal = etCodigoLocal.getText().toString().trim();
-
-                if (inputLocal.isEmpty()) {
-                    Toast.makeText(ScanActivity.this, "Por favor, introduce el ID del Local.", Toast.LENGTH_SHORT).show();
-                } else if (mesaSeleccionada.equals("Ninguna")) {
-                    Toast.makeText(ScanActivity.this, "Por favor, selecciona una mesa del menú.", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(ScanActivity.this, "Conectando al Local #" + inputLocal + " desde la " + mesaSeleccionada, Toast.LENGTH_LONG).show();
-                    viajarAlHome();
-                }
-            }
-        });
-
-        // Botón Híbrido: Llamar al Camarero (Flujo Tradicional Asistido)
-        btnLlamarCamarero.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String inputLocal = etCodigoLocal.getText().toString().trim();
-
-                if (mesaSeleccionada.equals("Ninguna")) {
-                    Toast.makeText(ScanActivity.this, "🔔 Solicitud general enviada. Un camarero acudirá a su posición.", Toast.LENGTH_LONG).show();
-                } else {
-                    String mensajeAsistencia = "🔔 Petición enviada. Personal en camino a la " + mesaSeleccionada;
-                    if (!inputLocal.isEmpty()) {
-                        mensajeAsistencia += " del Local #" + inputLocal;
-                    }
-                    Toast.makeText(ScanActivity.this, mensajeAsistencia, Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
     }
 
-    private void viajarAlHome() {
+    private void viajarAlMenu(String uuidReal, String mesaId) {
         Intent intent = new Intent(ScanActivity.this, HomeMenuActivity.class);
+        intent.putExtra("RESTAURANT_ID", uuidReal);
+        intent.putExtra("TABLE_ID", mesaId);
+        // Reseteamos la pila para que al darle atrás en el menú no vuelva a la cámara
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
     }
@@ -132,12 +84,32 @@ public class ScanActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (barcodeScannerView != null) barcodeScannerView.resume();
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+            if (barcodeScannerView != null) barcodeScannerView.resume();
+        }
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         if (barcodeScannerView != null) barcodeScannerView.pause();
+    }
+
+    private void solicitarPermisoCamara() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, CAMERA_PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == CAMERA_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                if (barcodeScannerView != null) barcodeScannerView.resume();
+            } else {
+                Toast.makeText(this, "Se requiere permiso de cámara para escanear QR", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }

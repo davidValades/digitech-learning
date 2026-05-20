@@ -1,51 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="32dp"
-    android:background="@color/app_background">
-
-    <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:src="@android:drawable/ic_dialog_info"
-        android:backgroundTint="@color/brand_green"
-        android:layout_marginBottom="24dp"/>
+    android:padding="24dp"
+    android:background="@color/app_background"
+    android:gravity="center_horizontal">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¡Pedido Confirmado!"
-        android:textSize="28sp"
+        android:text="Estado de tu pedido"
+        android:textSize="26sp"
         android:textStyle="bold"
         android:textColor="@color/text_primary"
-        android:layout_marginBottom="16dp"/>
+        android:layout_marginTop="32dp"/>
 
     <TextView
+        android:id="@+id/tvOrderId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tu comida estará lista en aproximadamente:"
+        android:text="Pedido #..."
+        android:textSize="16sp"
+        android:textColor="@color/text_secondary"
+        android:layout_marginBottom="40dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="40dp">
+
+        <LinearLayout
+            android:id="@+id/stepReceived"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:alpha="0.3">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_circle_fab"
+                android:backgroundTint="#3b82f6"
+                android:src="@android:drawable/ic_menu_agenda"
+                android:padding="12dp"
+                android:tint="@color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Recibido"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stepCooking"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:alpha="0.3">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_circle_fab"
+                android:backgroundTint="#f59e0b"
+                android:src="@android:drawable/ic_menu_manage"
+                android:padding="12dp"
+                android:tint="@color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="En cocina"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stepReady"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:alpha="0.3">
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/bg_circle_fab"
+                android:backgroundTint="#10b981"
+                android:src="@android:drawable/ic_menu_view"
+                android:padding="12dp"
+                android:tint="@color/white"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¡Listo!"
+                android:layout_marginTop="8dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStatusMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Conectando con la cocina..."
         android:textAlignment="center"
-        android:textColor="@color/text_primary"
-        android:layout_marginBottom="8dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="15 - 20 Minutos"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
-        android:textColor="@color/brand_orange"
-        android:layout_marginBottom="48dp"/>
+        android:textColor="@color/brand_purple"
+        android:layout_marginBottom="40dp"/>
+
+    <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1"/>
 
     <Button
-        android:id="@+id/btnLeaveReview"
+        android:id="@+id/btnBackToMenu"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Dejar una Reseña"
+        android:text="Volver a la Carta"
         android:textColor="@color/white"
         android:backgroundTint="@color/brand_purple" />
 

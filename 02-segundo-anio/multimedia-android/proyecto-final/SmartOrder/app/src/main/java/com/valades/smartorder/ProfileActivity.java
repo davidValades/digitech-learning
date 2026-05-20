@@ -27,8 +27,8 @@ public class ProfileActivity extends AppCompatActivity {
         navHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Viajamos a Home y limpiamos la pila para que no se apilen ventanas
-                Intent intent = new Intent(ProfileActivity.this, HomeMenuActivity.class);
+                // CORRECCIÓN: Ahora viajamos a AppHomeActivity (Pantalla inicial de la app)
+                Intent intent = new Intent(ProfileActivity.this, AppHomeActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 finish();
@@ -44,7 +44,6 @@ public class ProfileActivity extends AppCompatActivity {
         });
 
         // Lógica del Modo Oscuro (Requisito Rúbrica)
-        // (Esto es una implementación básica. Para que funcione en toda la app se requiere configurar themes.xml)
         switchDarkMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
@@ -59,18 +58,19 @@ public class ProfileActivity extends AppCompatActivity {
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Vaciamos el carrito por seguridad
+                // Vaciamos el carrito y limpiamos cualquier pedido global por seguridad
                 CartManager.vaciarCarrito();
+
+                // Si creaste la clase OrderManager como te sugerí antes, descomenta esta línea:
+                // OrderManager.limpiarPedido();
 
                 Toast.makeText(ProfileActivity.this, "Sesión cerrada correctamente", Toast.LENGTH_SHORT).show();
 
-                // Aquí deberías redirigir a tu LoginActivity
-                // Si la llamaste LoginActivity, usa esto:
-                /*
-                Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+                // Redirigimos a la pantalla de inicio principal al cerrar sesión
+                Intent intent = new Intent(ProfileActivity.this, AppHomeActivity.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(intent);
-                */
+                finish();
             }
         });
     }

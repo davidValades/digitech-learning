@@ -48,11 +48,15 @@
         android:layout_marginBottom="16dp"/>
 
     <Button
-        android:id="@+id/btnVisitWebsite"
+        android:id="@+id/btnVisitarWeb"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="Visitar Web Oficial"
+        android:text="Visitar Web Oficial B2B"
+        android:textSize="16sp"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:backgroundTint="@color/brand_orange" />
+        android:backgroundTint="@color/brand_purple"
+        android:elevation="4dp"
+        android:layout_marginBottom="24dp"/>
 
 </LinearLayout>

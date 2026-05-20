@@ -16,7 +16,7 @@ public class ReviewAndInfoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_review_and_info);
 
         Button btnSubmitReview = findViewById(R.id.btnSubmitReview);
-        Button btnVisitWebsite = findViewById(R.id.btnVisitWebsite);
+        Button btnVisitarWeb = findViewById(R.id.btnVisitarWeb);
 
         // Funcionalidad extra: Enviar reseña y volver al inicio
         btnSubmitReview.setOnClickListener(new View.OnClickListener() {
@@ -29,14 +29,21 @@ public class ReviewAndInfoActivity extends AppCompatActivity {
             }
         });
 
-        // REQUISITO CUMPLIDO: Uso de la clase URI e Intent implícito
-        btnVisitWebsite.setOnClickListener(new View.OnClickListener() {
+        // LÓGICA DEL BOTÓN URI (Requisito Rúbrica)
+        btnVisitarWeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String url = "https://www.google.com"; // Puedes poner la web de tu restaurante o tu GitHub
-                Uri webpage = Uri.parse(url);
-                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-                startActivity(intent);
+                // 1. Definimos la URL de nuestra Landing Page en Vercel
+                String urlOficial = "https://smartorder-two.vercel.app/";
+
+                // 2. Convertimos el texto en un objeto URI
+                android.net.Uri paginaWeb = android.net.Uri.parse(urlOficial);
+
+                // 3. Creamos un Intent implícito de tipo ACTION_VIEW
+                Intent intentWeb = new Intent(Intent.ACTION_VIEW, paginaWeb);
+
+                // 4. Lanzamos la petición al sistema operativo
+                startActivity(intentWeb);
             }
         });
     }
