@@ -61,7 +61,7 @@ public class ClienteVisual extends Application {
         // Hilo abierto con el bucle para que siempre este recibiendo:
         Thread hiloAbierto = new Thread(() -> {
             //variables para la ip (la ip de la maquina virtual que creemos.
-            String ipServidor = "127.0.0.1";
+            String ipServidor = "172.26.17.127";
             int puerto = 5000; //puerto que tenemos en la clase servidor
 
             try {
